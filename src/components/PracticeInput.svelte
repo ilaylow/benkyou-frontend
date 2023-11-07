@@ -45,11 +45,6 @@
     function handleRefreshQuestions() {
         window.location.reload()
     }
-
-    function handleLogOut() {
-        localStorage.removeItem('jwt_token');
-        window.location.reload()
-    }
   </script>
 
 <style>
@@ -65,20 +60,6 @@
         align-items: center;
         justify-content: space-between; /* This will put space between the h1 and the button */
         margin-bottom: -1%;
-    }
-
-    .header-container .header-button {
-        margin-left: 0%;
-        background-color: #fdb241;
-		color: #fff;
-		border: none;
-		padding: 0.5rem 1.5rem;
-		font-size: 1rem;
-		font-family: Meiryo, Yu Gothic, sans-serif;
-        text-decoration: bold;
-		border-radius: 0.25rem;
-		cursor: pointer;
-		margin-top: -1rem;  /* Space above button */
     }
     
     .question {
@@ -166,13 +147,10 @@
 </style>
   
 <div class="container {isMarking ? 'is-marking' : ''}">
-    <div class="header-container">
-        <h1>練習しましょう</h1>
-        <button class="header-button" on:click={handleLogOut}>ログアウト</button>
-    </div>
+    <h1>練習しましょう</h1>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
-        <button class="header-button" on:click={handleRefreshQuestions}>更新</button>
+        <Button style="retry" on:click={handleRefreshQuestions} text="更新"/>
     </div>
     {#each translations.sentence_pairs as { id, question, answer, solution, score }}
         <div class="question">
