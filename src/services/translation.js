@@ -36,6 +36,8 @@ const getTranslationQuestion = async () => {
 
 const getTranslationMark = async (translations) => {
     let jwt = localStorage.getItem('jwt_token');
+    let uid = localStorage.getItem('uid');
+    translations.uid = uid;
 
     const response = await fetch(markQuestionUrl, getMarkRequestOptions(translations, setHeaders(jwt)));
     return await response.json();

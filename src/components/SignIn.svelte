@@ -15,6 +15,7 @@
 		try {
       let loginData = await signInUser(userCreds);
       localStorage.setItem('jwt_token', loginData.jwt);
+      localStorage.setItem('uid', loginData.uid);
       window.location.reload();
     } catch (error) {
       showSignInError = true;
