@@ -1,20 +1,22 @@
-// URL to send the request to
 const getQuestionUrl = 'http://localhost:5215/Translation/GetQuestion';
 const markQuestionUrl = 'http://localhost:5215/Translation/MarkQuestion';
 
-// Headers for the request
-const headers = new Headers({
-    'Content-Type': 'application/json',
-    'oaitoken': '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'
-});
+const setHeaders = (jwt) => {
+    return new Headers({
+        'Content-Type': 'application/json',
+        'oaitoken': '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',
+        'Authorization': 'Bearer ' + jwt
+    })
+}
 
-// Options for the request
-const getQuestionRequestOptions = {
-    method: 'GET',    // Specify the request method
-    headers: headers,  // Specify the headers
+const getQuestionRequestOptions = (headers) => {
+    return {
+        method: 'GET',  
+        headers: headers,
+    }
 };
 
-const getMarkRequestOptions = (body) => {
+const getMarkRequestOptions = (body, headers) => {
     return {
         method: 'POST',
         headers: headers,
@@ -23,24 +25,19 @@ const getMarkRequestOptions = (body) => {
 }
 
 const getTranslationQuestion = async () => {
-    const response = await fetch(getQuestionUrl, getQuestionRequestOptions);
-    let data = await response.json();
+    let jwt = localStorage.getItem('jwt_token');
 
-    return data
+    const response = await fetch(getQuestionUrl, getQuestionRequestOptions(setHeaders(jwt)));
+    return await response.json();
+
 };
 
 const getTranslationMark = async (translations) => {
-    console.log(getMarkRequestOptions(translations))
+    let jwt = localStorage.getItem('jwt_token');
 
-    let data = null;
-    try {
-        const response = await fetch(markQuestionUrl, getMarkRequestOptions(translations));
-        data = await response.json();
-    } catch (error) {
-        console.log(error)
-    }
-    
-    return data
+    const response = await fetch(markQuestionUrl, getMarkRequestOptions(translations, setHeaders(jwt)));
+    return await response.json();
+
 }
 
 export { getTranslationQuestion, getTranslationMark };

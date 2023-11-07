@@ -1,13 +1,10 @@
 <!-- src/components/PracticeInput.svelte -->
 <script>
-  import { time_ranges_to_array } from "svelte/internal";
   import { getTranslationMark } from "../services/translation";
   import Button from "./Button.svelte";
 
     // Your data objects
     export let translations = [];
-    console.log(translations)
-    console.log(translations.sentence_pairs)
 
     // Reactive variable for loading state
     let isMarking = false;
@@ -31,12 +28,10 @@
             }
         })
         translations.sentence_pairs = nextPairs;
-        console.log(translations.sentence_pairs)
     }
 
     async function handleMark() {
         isMarking = true;
-        console.log("Clicked mark!")
         try {
             const markedTranslations = await getTranslationMark(translations);
             translations = markedTranslations;
@@ -44,22 +39,45 @@
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-        isMarking = false;
-        
+        isMarking = false;   
+    }
+
+    function handleRefreshQuestions() {
+        window.location.reload()
     }
   </script>
 
 <style>
     .container {
         margin-top: 0%; /* Adjusted to be relative to the parent container */
-        margin-left: -10%; /* Adjusted to be relative to the parent container */
+        margin-left: -6%; /* Adjusted to be relative to the parent container */
         width: 60%; /* Set a fixed width relative to the parent container */
         height: 90%;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* This will put space between the h1 and the button */
+        margin-bottom: -1%;
+    }
+
+    .header-container .header-button {
+        margin-left: 0%;
+        background-color: #fdb241;
+		color: #fff;
+		border: none;
+		padding: 0.5rem 1.5rem;
+		font-size: 1rem;
+		font-family: Meiryo, Yu Gothic, sans-serif;
+        text-decoration: bold;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		margin-top: -1rem;  /* Space above button */
     }
     
     .question {
         margin-bottom: 0.5em;
-        
     }
   
     input[type="text"] {
@@ -75,6 +93,7 @@
     }
 
     h1 {
+        margin-right: auto;
         font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: underline;
         text-decoration-color: currentColor; /* optional, to specify the color of the underline */
@@ -108,8 +127,8 @@
 
     .loading-icon {
         display: none; /* Hide by default */
-        margin-left: 5%;
-        margin-top: 5%;
+        margin-left: 3rem;
+        margin-top: 3.5rem;
         border: 0.5rem solid #181818; /* Background color */
         border-top: 0.5rem solid #ff4081; /* Foreground color */
         border-radius: 50%;
@@ -143,7 +162,10 @@
   
 <div class="container {isMarking ? 'is-marking' : ''}">
     <h1>練習しましょう</h1>
-    <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
+    <div class="header-container">
+        <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
+        <button class="header-button" on:click={handleRefreshQuestions}>更新</button>
+    </div>
     {#each translations.sentence_pairs as { id, question, answer, solution, score }}
         <div class="question">
             <p>{question}</p>

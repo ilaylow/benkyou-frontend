@@ -6,19 +6,28 @@
     import Loading  from '../components/Loading.svelte';
     import PracticeInput from '../components/PracticeInput.svelte';
     import { navigate } from 'svelte-routing/src/history';
+    import {isTokenPresentAndValid} from "../utils/jwt";
 
     let data = null;
     let error = false;
 
     onMount(async () => {
+        if (typeof window !== 'undefined') {
+            if (!isTokenPresentAndValid()) {
+                navigate('/');
+            }
+        }
+
         try {
             data = await getTranslationQuestion();
             // data = {
             //     id: "123123123123123",
+            //     uid: "",
+            //     user: null,
             //     sentence_pairs: [
             //         {
             //             id: "12345",
-            //             question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
+            //             question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
             //             answer: "",
             //             solution: "",
             //             score: 0,
