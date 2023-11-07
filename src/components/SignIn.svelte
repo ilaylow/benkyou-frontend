@@ -18,7 +18,7 @@
       window.location.reload();
     } catch (error) {
       showSignInError = true;
-      clicked = true;
+      clicked = false;
       console.log(error)
     }
 }

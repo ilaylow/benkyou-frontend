@@ -1,4 +1,5 @@
-const userSignInURL = 'http://localhost:5215/User/SignIn';
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:5215';
+const userSignInURL = `${backendUrl}/User/SignIn`;
 
 const headers = new Headers({
         'Content-Type': 'application/json'

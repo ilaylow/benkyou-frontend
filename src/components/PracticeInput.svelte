@@ -45,6 +45,11 @@
     function handleRefreshQuestions() {
         window.location.reload()
     }
+
+    function handleLogOut() {
+        localStorage.removeItem('jwt_token');
+        window.location.reload()
+    }
   </script>
 
 <style>
@@ -161,7 +166,10 @@
 </style>
   
 <div class="container {isMarking ? 'is-marking' : ''}">
-    <h1>練習しましょう</h1>
+    <div class="header-container">
+        <h1>練習しましょう</h1>
+        <button class="header-button" on:click={handleLogOut}>ログアウト</button>
+    </div>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
         <button class="header-button" on:click={handleRefreshQuestions}>更新</button>

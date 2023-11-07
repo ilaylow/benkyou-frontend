@@ -1,5 +1,7 @@
-const getQuestionUrl = 'http://localhost:5215/Translation/GetQuestion';
-const markQuestionUrl = 'http://localhost:5215/Translation/MarkQuestion';
+const backendUrl = process.env.BACKEND_URL || 'http://localhost:5215';
+
+const getQuestionUrl = `${backendUrl}/Translation/GetQuestion`;
+const markQuestionUrl = `${backendUrl}/Translation/MarkQuestion`;
 
 const setHeaders = (jwt) => {
     return new Headers({

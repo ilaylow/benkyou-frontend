@@ -5,6 +5,10 @@ import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import css from 'rollup-plugin-css-only';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
+
+dotenv.config(); // This loads the .env file and parses the variables
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -58,6 +62,12 @@ export default {
 			dedupe: ['svelte'],
 			exportConditions: ['svelte']
 		}),
+
+		replace({
+			'process.env.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL),
+			preventAssignment: true,
+		}),
+
 		commonjs(),
 
 		// In dev mode, call `npm run start` once
