@@ -61,7 +61,7 @@
 
     function handleLogOut() {
         localStorage.removeItem('jwt_token');
-        reloadPage();
+        navigate('/');
     }
 </script>
 
