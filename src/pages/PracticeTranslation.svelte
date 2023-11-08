@@ -32,6 +32,7 @@
         });
 
         try {
+            console.log(tokenizer.tokenize("彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた"))
             data = await getTranslationQuestion();
             // data = {
             //     id: "123123123123123",
