@@ -55,7 +55,6 @@ const getTranslationMark = async (translations) => {
     }
 
     return markedTranslations
-
 }
 
 export { getTranslationQuestion, getTranslationMark };
