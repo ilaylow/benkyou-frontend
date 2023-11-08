@@ -12,5 +12,5 @@
 </style>
 
 <footer>
-    © 2023 勉You
+    © 2023 勉You by ilaylow
 </footer>
