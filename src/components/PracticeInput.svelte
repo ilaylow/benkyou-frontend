@@ -114,6 +114,14 @@
       font-weight: bold;
     }
 
+    p {
+      word-wrap: break-word; /* This ensures text goes to the next line */
+      hyphens: auto; /* Optional: This will hyphenate words if necessary */
+      font-size: 120%;
+      font-family: Meiryo, Yu Gothic, sans-serif;
+      font-weight: bold;
+    }
+
     .button-container {
         display: flex;
         align-items: center; /* Align items vertically */
