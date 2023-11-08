@@ -77,6 +77,7 @@
                 tokenized_sentence_pairs.push(pair)
             }
             data.sentence_pairs = tokenized_sentence_pairs;
+            console.log(data)
         } catch (e) {
             console.error('Error fetching translation question:', e);
             error = true;
