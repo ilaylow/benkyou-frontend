@@ -39,15 +39,17 @@ const getTranslationMark = async (translations) => {
     for (let pair of sendTranslations.sentence_pairs) {
         delete pair.tokenized_question;
     }
-    console.log(translations)
-    console.log(sendTranslations)
 
     let jwt = localStorage.getItem('jwt_token');
     let uid = localStorage.getItem('uid');
     translations.uid = uid;
 
     const response = await fetch(markQuestionUrl, getMarkRequestOptions(translations, setHeaders(jwt)));
-    return await response.json();
+    let markedTranslations = await response.json();
+    for (let pair of markedTranslations.sentence_pairs) {
+        const matchPair = translations.sentence_pairs.find(p => p.id == pair.id)
+        pair.tokenized_question = matchPair.tokenized_question
+    }
 
 }
 

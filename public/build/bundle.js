@@ -6759,7 +6759,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\pages\\PracticeTranslation.svelte";
 
-    // (123:4) {:else}
+    // (121:4) {:else}
     function create_else_block(ctx) {
     	let button;
     	let t;
@@ -6817,14 +6817,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(123:4) {:else}",
+    		source: "(121:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:28) 
+    // (118:28) 
     function create_if_block_1(ctx) {
     	let loading;
     	let current;
@@ -6857,14 +6857,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(120:28) ",
+    		source: "(118:28) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (111:4) {#if error}
+    // (109:4) {#if error}
     function create_if_block(ctx) {
     	let div1;
     	let h1;
@@ -6895,10 +6895,10 @@ var app = (function () {
     			t2 = space();
     			create_component(button1.$$.fragment);
     			attr_dev(h1, "class", "svelte-paxoy3");
-    			add_location(h1, file, 113, 12, 3820);
+    			add_location(h1, file, 111, 12, 3785);
     			attr_dev(div0, "class", "button-container svelte-paxoy3");
-    			add_location(div0, file, 114, 12, 3865);
-    			add_location(div1, file, 112, 8, 3801);
+    			add_location(div0, file, 112, 12, 3830);
+    			add_location(div1, file, 110, 8, 3766);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -6933,7 +6933,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(111:4) {#if error}",
+    		source: "(109:4) {#if error}",
     		ctx
     	});
 
@@ -6961,7 +6961,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			if_block.c();
-    			add_location(main, file, 109, 0, 3739);
+    			add_location(main, file, 107, 0, 3704);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7053,38 +7053,37 @@ var app = (function () {
     			});
 
     		try {
-    			//console.log(tokenizer.tokenize("彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた"))
-    			//data = await getTranslationQuestion();
-    			$$invalidate(0, data = {
-    				id: "123123123123123",
-    				uid: "",
-    				user: null,
-    				sentence_pairs: [
-    					{
-    						id: "12345",
-    						question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
-    						answer: "",
-    						solution: "",
-    						score: 0
-    					},
-    					{
-    						id: "123456",
-    						question: "この小説は直訳すると意味がよくわからないが、読み手が感じたことを大切にすれば、非常に面白い作品であるといえる。",
-    						answer: "",
-    						solution: "",
-    						score: 0
-    					},
-    					{
-    						id: "1234567",
-    						question: "私が知りたいことは、あなたがその問題を解決するために何を考えているか、そして具体的にどのような行動を取るつもりなのかです。",
-    						answer: "",
-    						solution: "",
-    						score: 0
-    					}
-    				],
-    				language: "Japanese"
-    			});
+    			$$invalidate(0, data = await getTranslationQuestion());
 
+    			// data = {
+    			//     id: "123123123123123",
+    			//     uid: "",
+    			//     user: null,
+    			//     sentence_pairs: [
+    			//         {
+    			//             id: "12345",
+    			//             question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
+    			//             answer: "",
+    			//             solution: "",
+    			//             score: 0,
+    			//         },
+    			//         {
+    			//             id: "123456",
+    			//             question: "この小説は直訳すると意味がよくわからないが、読み手が感じたことを大切にすれば、非常に面白い作品であるといえる。",
+    			//             answer: "",
+    			//             solution: "",
+    			//             score: 0,
+    			//         },
+    			//         {
+    			//             id: "1234567",
+    			//             question: "私が知りたいことは、あなたがその問題を解決するために何を考えているか、そして具体的にどのような行動を取るつもりなのかです。",
+    			//             answer: "",
+    			//             solution: "",
+    			//             score: 0,
+    			//         }
+    			//     ],
+    			//     language: "Japanese",
+    			// }
     			let tokenized_sentence_pairs = [];
 
     			for (let pair of data.sentence_pairs) {
@@ -7101,7 +7100,6 @@ var app = (function () {
     			}
 
     			$$invalidate(0, data.sentence_pairs = tokenized_sentence_pairs, data);
-    			console.log(data);
     		} catch(e) {
     			console.error('Error fetching translation question:', e);
     			$$invalidate(1, error = true);
