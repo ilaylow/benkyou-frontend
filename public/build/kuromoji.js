@@ -8124,8 +8124,13 @@ BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
         }
         var arraybuffer = this.response;
 
-        var gz = new zlib.Zlib.Gunzip(new Uint8Array(arraybuffer));
-        var typed_array = gz.decompress();
+        try {
+            var gz = new zlib.Zlib.Gunzip(new Uint8Array(arraybuffer));
+            var typed_array = gz.decompress();
+        } catch (error) {
+            typed_array = arraybuffer;
+        }
+        
         callback(null, typed_array);
     };
     xhr.onerror = function (err) {
