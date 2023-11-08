@@ -8126,7 +8126,7 @@ BrowserDictionaryLoader.prototype.loadArrayBuffer = function (url, callback) {
 
         var gz = new zlib.Zlib.Gunzip(new Uint8Array(arraybuffer));
         var typed_array = gz.decompress();
-        callback(null, arraybuffer);
+        callback(null, typed_array);
     };
     xhr.onerror = function (err) {
         callback(err, null);
