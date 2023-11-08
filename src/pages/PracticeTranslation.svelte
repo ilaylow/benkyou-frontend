@@ -7,9 +7,11 @@
     import PracticeInput from '../components/PracticeInput.svelte';
     import { navigate } from 'svelte-routing/src/history';
     import {isTokenPresentAndValid} from "../utils/jwt";
+    import * as wanakana from 'wanakana';
 
     let data = null;
     let error = false;
+    
 
     onMount(async () => {
         if (typeof window !== 'undefined') {
@@ -18,37 +20,62 @@
             }
         }
 
+        // Async load tokenizer
+        const tokenizer = await new Promise((resolve, reject) => {
+            kuromoji.builder({ dicPath: "/dict/" }).build((err, builtTokenizer) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(builtTokenizer);
+                }
+            });
+        });
+
         try {
-            data = await getTranslationQuestion();
-            // data = {
-            //     id: "123123123123123",
-            //     uid: "",
-            //     user: null,
-            //     sentence_pairs: [
-            //         {
-            //             id: "12345",
-            //             question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
-            //             answer: "",
-            //             solution: "",
-            //             score: 0,
-            //         },
-            //         {
-            //             id: "123456",
-            //             question: "この小説は直訳すると意味がよくわからないが、読み手が感じたことを大切にすれば、非常に面白い作品であるといえる。",
-            //             answer: "",
-            //             solution: "",
-            //             score: 0,
-            //         },
-            //         {
-            //             id: "1234567",
-            //             question: "私が知りたいことは、あなたがその問題を解決するために何を考えているか、そして具体的にどのような行動を取るつもりなのかです。",
-            //             answer: "",
-            //             solution: "",
-            //             score: 0,
-            //         }
-            //     ],
-            //     language: "Japanese",
-            // }
+            //data = await getTranslationQuestion();
+            data = {
+                id: "123123123123123",
+                uid: "",
+                user: null,
+                sentence_pairs: [
+                    {
+                        id: "12345",
+                        question: "彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。彼が部屋に入ってきた時、私はテレビを見ていたわけではなく、ラジオを聴いていた。",
+                        answer: "",
+                        solution: "",
+                        score: 0,
+                    },
+                    {
+                        id: "123456",
+                        question: "この小説は直訳すると意味がよくわからないが、読み手が感じたことを大切にすれば、非常に面白い作品であるといえる。",
+                        answer: "",
+                        solution: "",
+                        score: 0,
+                    },
+                    {
+                        id: "1234567",
+                        question: "私が知りたいことは、あなたがその問題を解決するために何を考えているか、そして具体的にどのような行動を取るつもりなのかです。",
+                        answer: "",
+                        solution: "",
+                        score: 0,
+                    }
+                ],
+                language: "Japanese",
+            }
+            let tokenized_sentence_pairs = []
+            for (let pair of data.sentence_pairs) {
+                let tokenized_question = tokenizer.tokenize(pair.question);
+
+                // Convert reading strings of each kanji to hiragana, for some reason they're set to katakana?
+                for (let token of tokenized_question) {
+                    let hiragana_reading = wanakana.toHiragana(token.reading);
+                    token.reading = hiragana_reading;
+                }
+
+                pair.tokenized_question = tokenized_question;
+                tokenized_sentence_pairs.push(pair)
+            }
+            data.sentence_pairs = tokenized_sentence_pairs;
         } catch (e) {
             console.error('Error fetching translation question:', e);
             error = true;

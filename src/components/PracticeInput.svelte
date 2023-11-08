@@ -1,7 +1,10 @@
 <!-- src/components/PracticeInput.svelte -->
 <script>
+
   import { getTranslationMark } from "../services/translation";
+  import * as wanakana from 'wanakana';
   import Button from "./Button.svelte";
+  import Toggle from "./Toggle.svelte";
 
     // Your data objects
     export let translations = [];
@@ -9,6 +12,7 @@
     // Reactive variable for loading state
     let isMarking = false;
     let showSolution = false;
+    let showFurigana = false;
 
     // A function to handle the input event
     function handleInput(event, id) {
@@ -45,6 +49,15 @@
     function handleRefreshQuestions() {
         window.location.reload()
     }
+
+    function tokenShouldShowFurigana(token) {
+        for (const char of token) {
+            if (wanakana.isKanji(char)) {
+                return true
+            }
+        }
+        return false;
+    } 
   </script>
 
 <style>
@@ -93,7 +106,7 @@
         margin-bottom: 3%;
     }
 
-    p {
+    ruby {
       word-wrap: break-word; /* This ensures text goes to the next line */
       hyphens: auto; /* Optional: This will hyphenate words if necessary */
       font-size: 120%;
@@ -150,11 +163,22 @@
     <h1>練習しましょう</h1>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
+        <Toggle bind:value={showFurigana} label="Furigana" design="slider" />
         <Button style="retry" on:click={handleRefreshQuestions} text="更新"/>
     </div>
-    {#each translations.sentence_pairs as { id, question, answer, solution, score }}
+    {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, score }}
         <div class="question">
-            <p>{question}</p>
+            {#each tokenized_question as { surface_form, reading }}
+                {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+                    <ruby>
+                        {surface_form}<rt>{reading}</rt>
+                    </ruby>
+                {:else}
+                    <ruby>
+                        {surface_form}
+                    </ruby>
+                {/if}
+            {/each}
             <input type="text" bind:value={answer} on:input={(event) => handleInput(event, id)} placeholder="答え。。。">
             <div class="solution-container {showSolution ? 'is-shown' : ''}">
                 <p>Solution: {solution}</p>

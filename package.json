@@ -9,8 +9,8 @@
     "start": "sirv public --single --no-clear"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-terser": "^0.4.0",
     "concurrently": "^8.2.2",
@@ -22,8 +22,10 @@
     "svelte": "^3.55.0"
   },
   "dependencies": {
+    "kuromoji": "^0.1.2",
     "sirv-cli": "^2.0.0",
     "svelte-material-ui": "^7.0.0-beta.15",
-    "svelte-routing": "^2.6.0"
+    "svelte-routing": "^2.6.0",
+    "wanakana": "^5.2.0"
   }
 }

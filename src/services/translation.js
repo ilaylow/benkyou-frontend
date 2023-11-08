@@ -35,6 +35,13 @@ const getTranslationQuestion = async () => {
 };
 
 const getTranslationMark = async (translations) => {
+    let sendTranslations = structuredClone(translations);
+    for (let pair of sendTranslations.sentence_pairs) {
+        delete pair.tokenized_question;
+    }
+    console.log(translations)
+    console.log(sendTranslations)
+
     let jwt = localStorage.getItem('jwt_token');
     let uid = localStorage.getItem('uid');
     translations.uid = uid;
