@@ -69,6 +69,19 @@
 		cursor: pointer;
     }
 
+	.swap {
+		background-color: #ff4081;
+		color: #fff;
+		border: none;
+		padding: 0.7rem 0.7rem;
+		margin-top: 0.2rem;
+		font-size: 0.9rem;
+		font-family: Meiryo, Yu Gothic, sans-serif;
+		border-radius: 1.5rem;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
 	.button:hover {
 		background-color: rgb(116, 19, 51);
 	}

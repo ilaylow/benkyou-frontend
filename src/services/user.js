@@ -16,10 +16,6 @@ const setSignInRequestOptions = (body) => {
 
 const signInUser = async (body) => {
     const response = await fetch(userSignInURL, setSignInRequestOptions(body));
-    for (let pair of response.headers.entries()) {
-        console.log(`${pair[0]}: ${pair[1]}`);
-      }
-
     let data = await response.json();
 
     return data

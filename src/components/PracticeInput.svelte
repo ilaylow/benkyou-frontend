@@ -1,13 +1,12 @@
 <!-- src/components/PracticeInput.svelte -->
 <script>
 
-  import { getTranslationMark } from "../services/translation";
-  import * as wanakana from 'wanakana';
-  import Button from "./Button.svelte";
-  import Toggle from "./Toggle.svelte";
-  import Error from "./Error.svelte";
+    import { getTranslationMark, tokenizeTranslations } from "../services/translation";
+    import * as wanakana from 'wanakana';
+    import Button from "./Button.svelte";
+    import Toggle from "./Toggle.svelte";
+    import Error from "./Error.svelte";
 
-    // Your data objects
     export let translations = [];
 
     // Reactive variable for loading state
@@ -37,10 +36,22 @@
     }
 
     async function handleMark() {
+        // Async load tokenizer
+        const tokenizer = await new Promise((resolve, reject) => {
+            kuromoji.builder({ dicPath: "/dict/" }).build((err, builtTokenizer) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(builtTokenizer);
+                }
+            });
+        });
+
         showError = false;
         isMarking = true;
         try {
             const markedTranslations = await getTranslationMark(translations);
+            tokenizeTranslations(markedTranslations, tokenizer);
             translations = markedTranslations;
             showSolution = true;
         } catch (error) {
@@ -52,6 +63,17 @@
 
     function handleRefreshQuestions() {
         window.location.reload()
+    }
+
+    function getNextFromLanguage() {
+        let currLanguage = sessionStorage.getItem("from_language") || "Japanese";
+        let nextLanguage = currLanguage == "Japanese" ? "English" : "Japanese";
+        return nextLanguage;
+    }
+
+    function handleSwapFromLanguage() {
+        sessionStorage.setItem("from_language", getNextFromLanguage());
+        window.location.reload();
     }
 
     function tokenShouldShowFurigana(token) {
@@ -75,8 +97,8 @@
     .header-container {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* This will put space between the h1 and the button */
         margin-bottom: -1%;
+        gap: 2.5%;
     }
     
     .question {
@@ -165,6 +187,18 @@
 	    border-radius: 1%;
     }
 
+    .question-para {
+        font-size: 100%;
+    }
+
+    .solution-ruby {
+        font-size: 120%;
+    }
+
+    .solution-rt {
+        font-size: 70%;
+    }
+
     @keyframes spin {
         0% { transform: translate(-50%, -50%) rotate(0deg); }
         100% { transform: translate(-50%, -50%) rotate(360deg); }
@@ -175,31 +209,50 @@
     <h1>練習しましょう</h1>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
+        <Button style="swap" on:click={handleSwapFromLanguage} text="Translate from {getNextFromLanguage()}"/>
         <Toggle bind:value={showFurigana} label="Furigana" design="slider" />
         <Button style="retry" on:click={handleRefreshQuestions} text="更新"/>
     </div>
-    {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, score }}
+    {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}
         <div class="question">
-            {#each tokenized_question as { surface_form, reading }}
-                {#if tokenShouldShowFurigana(surface_form) && showFurigana}
-                    <ruby>
-                        {surface_form}<rt>{reading}</rt>
-                    </ruby>
-                {:else}
-                    <ruby>
-                        {surface_form}
-                    </ruby>
-                {/if}
-            {/each}
+            {#if tokenized_question == null}
+                <p class="question-para">{question}</p>
+            {:else}    
+                {#each tokenized_question as { surface_form, reading }}
+                    {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+                        <ruby>
+                            {surface_form}<rt>{reading}</rt>
+                        </ruby>
+                    {:else}
+                        <ruby>
+                            {surface_form}
+                        </ruby>
+                    {/if}
+                {/each}
+            {/if}
             <input type="text" bind:value={answer} on:input={(event) => handleInput(event, id)} placeholder="答え。。。">
             <div class="solution-container {showSolution ? 'is-shown' : ''}">
-                <p>Solution: {solution}</p>
+                {#if tokenized_solution == null}
+                    <p>{solution}</p>
+                {:else}    
+                    {#each tokenized_solution as { surface_form, reading }}
+                        {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+                            <ruby class="solution-ruby">
+                                {surface_form}<rt class="solution-rt">{reading}</rt>
+                            </ruby>
+                        {:else}
+                            <ruby class="solution-ruby">
+                                {surface_form}
+                            </ruby>
+                        {/if}
+                    {/each}
+                {/if}
                 <p>Score: {score}/5</p>
             </div>
         </div>
     {/each}
     <div class="button-container {isMarking ? 'is-marking' : ''}">
-        <Button text="確認" on:click={handleMark} disabled={isMarking}/>
+        <Button text="確認" on:click={handleMark} loading={isMarking}/>
         <div class="loading-icon"></div>
         <Error showError={showError}/>
     </div>

@@ -8,13 +8,12 @@
     export let label;
     export let design = 'inner label'
     export let options = [];
-		export let fontSize = 16;
-	  export let value = 'on';
+	export let fontSize = 16;
+	export let value = false;
 
     let checked = false;
 
-
-		const uniqueID = Math.floor(Math.random() * 100)
+	const uniqueID = Math.floor(Math.random() * 100)
 
     function handleClick(event){
         const target = event.target
@@ -102,12 +101,11 @@
     /* Slider Design Option */
 
     .s--slider {
-        margin-left: 25%;
-        margin-bottom: 0.5%;
+        margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
         background-color: #504f4f;
-        padding: 0.6% 0.6%;
+        padding: 0.5em 0.5em;
         border-radius: 1rem;
     }
 

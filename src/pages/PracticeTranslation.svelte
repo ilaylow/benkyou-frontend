@@ -1,17 +1,15 @@
 <!-- src/pages/PracticeTranslation.svelte -->
 <script>
     import { onMount } from 'svelte';
-    import {getTranslationQuestion} from '../services/translation';
+    import {getTranslationQuestion, tokenizeTranslations} from '../services/translation';
     import Button from '../components/Button.svelte';
     import Loading  from '../components/Loading.svelte';
     import PracticeInput from '../components/PracticeInput.svelte';
     import { navigate } from 'svelte-routing/src/history';
     import {isTokenPresentAndValid} from "../utils/jwt";
-    import * as wanakana from 'wanakana';
 
     let data = null;
     let error = false;
-    
 
     onMount(async () => {
         if (typeof window !== 'undefined') {
@@ -32,7 +30,10 @@
         });
 
         try {
-            data = await getTranslationQuestion();
+            // Get current "from" language
+            let fromLanguage = sessionStorage.getItem('from_language') || "Japanese";
+            data = await getTranslationQuestion(fromLanguage);
+
             // data = {
             //     id: "123123123123123",
             //     uid: "",
@@ -62,20 +63,36 @@
             //     ],
             //     language: "Japanese",
             // }
-            let tokenized_sentence_pairs = []
-            for (let pair of data.sentence_pairs) {
-                let tokenized_question = tokenizer.tokenize(pair.question);
-
-                // Convert reading strings of each kanji to hiragana, for some reason they're set to katakana?
-                for (let token of tokenized_question) {
-                    let hiragana_reading = wanakana.toHiragana(token.reading);
-                    token.reading = hiragana_reading;
-                }
-
-                pair.tokenized_question = tokenized_question;
-                tokenized_sentence_pairs.push(pair)
-            }
-            data.sentence_pairs = tokenized_sentence_pairs;
+            // data = {
+            //     id: "dab93d8f-200e-4875-9e83-25073fee9fa1",
+            //     uid: "",
+            //     user: null,
+            //     sentence_pairs: [
+            //         {
+            //             id: "acc8bd96-52b1-4f7b-90dd-3a32678aa129",
+            //             question: "The cherry blossoms in Japan bloom beautifully in the spring, attracting tourists from all around the world.",
+            //             answer: "",
+            //             score: 0,
+            //             solution: ""
+            //         },
+            //         {
+            //             id: "d49f0502-95f8-4ab9-9e93-713d63debf7b",
+            //             question: "The restaurant was so crowded that we had to wait for about an hour to get a table, but the food was definitely worth the wait.",
+            //             answer: "",
+            //             score: 0,
+            //             solution: ""
+            //         },
+            //         {
+            //             id: "9c1b08be-8a35-414e-9c63-a86df5e78801",
+            //             question: "My grandmother, who lives in the countryside, loves to grow her own vegetables and fruits in her large garden.",
+            //             answer: "",
+            //             score: 0,
+            //             solution: ""
+            //         }
+            //     ],
+            //     language: "English"
+            // }
+            tokenizeTranslations(data, tokenizer);
         } catch (e) {
             console.error('Error fetching translation question:', e);
             error = true;
@@ -87,8 +104,11 @@
     }
 
     function handleLogOut() {
-        localStorage.removeItem('jwt_token');
-        localStorage.removeItem('uid');
+        localStorage.clear();
+        sessionStorage.clear();
+        // localStorage.removeItem('from_language')
+        // localStorage.removeItem('jwt_token');
+        // localStorage.removeItem('uid');
         navigate('/');
     }
 </script>
