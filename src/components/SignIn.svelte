@@ -2,6 +2,7 @@
 <script>
 	import { signInUser } from "../services/user";
   import Button from "./Button.svelte";
+  import Error from "./Error.svelte";
 
 	let clicked = false;
   let showSignInError = false;
@@ -12,6 +13,7 @@
 
 	async function handleSignIn() {
     clicked = true;
+    showSignInError = false;
 		try {
       let loginData = await signInUser(userCreds);
       localStorage.setItem('jwt_token', loginData.jwt);
@@ -73,7 +75,7 @@
     .loading-icon {
         display: none; /* Hide by default */
         margin-left: 3rem;
-        margin-top: 3.5rem;
+        margin-top: 2.3rem;
         border: 0.5rem solid #181818; /* Background color */
         border-top: 0.5rem solid #ff4081; /* Foreground color */
         border-radius: 50%;
@@ -100,5 +102,6 @@
     <div class="button-container {clicked ? 'is-logging-in' : ''}">
       <Button text="ログイン" on:click={handleSignIn} disabled={clicked}/>
       <div class="loading-icon"></div>
+      <Error showError={showSignInError} text="Error signing in. Please try again later."/>
   </div>
 </div>

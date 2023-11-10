@@ -6,7 +6,6 @@ const markQuestionUrl = `${backendUrl}/Translation/MarkQuestion`;
 const setHeaders = (jwt) => {
     return new Headers({
         'Content-Type': 'application/json',
-        'oaitoken': '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',
         'Authorization': 'Bearer ' + jwt
     })
 }

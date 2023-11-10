@@ -26,7 +26,8 @@
 		border-radius: 0.25rem;
 		cursor: pointer;
 		transition: background-color 0.3s;
-		margin-top: 2rem;  /* Space above button */
+		margin-top: 1.5rem;  /* Space above button */
+		margin-bottom: 1.5rem;
 	}
 
 	.error {

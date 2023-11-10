@@ -5,6 +5,7 @@
   import * as wanakana from 'wanakana';
   import Button from "./Button.svelte";
   import Toggle from "./Toggle.svelte";
+  import Error from "./Error.svelte";
 
     // Your data objects
     export let translations = [];
@@ -13,6 +14,7 @@
     let isMarking = false;
     let showSolution = false;
     let showFurigana = false;
+    let showError = false;
 
     // A function to handle the input event
     function handleInput(event, id) {
@@ -35,6 +37,7 @@
     }
 
     async function handleMark() {
+        showError = false;
         isMarking = true;
         try {
             const markedTranslations = await getTranslationMark(translations);
@@ -42,6 +45,7 @@
             showSolution = true;
         } catch (error) {
             console.error('Error fetching data:', error);
+            showError = true;
         }
         isMarking = false;   
     }
@@ -135,7 +139,7 @@
     .loading-icon {
         display: none; /* Hide by default */
         margin-left: 3rem;
-        margin-top: 3.5rem;
+        margin-top: 2rem;
         border: 0.5rem solid #181818; /* Background color */
         border-top: 0.5rem solid #ff4081; /* Foreground color */
         border-radius: 50%;
@@ -197,5 +201,6 @@
     <div class="button-container {isMarking ? 'is-marking' : ''}">
         <Button text="確認" on:click={handleMark} disabled={isMarking}/>
         <div class="loading-icon"></div>
+        <Error showError={showError}/>
     </div>
 </div>
