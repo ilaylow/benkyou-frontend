@@ -39,7 +39,7 @@
         <SignIn/>
     {:else}
         <Title />
-        <Button on:click={goToPractice}/>
+        <Button on:click={goToPractice} text="翻訳練習"/>
         <Footer />
     {/if}
 </main>
