@@ -1,7 +1,7 @@
 <!-- src/components/Slider.svelte -->
 <script>
     // Local state for the slider value
-    export let value = sessionStorage.getItem("difficulty") ? sessionStorage.getItem("difficulty") : 5;
+    export let value = sessionStorage.getItem("difficulty") || 3;
     export let childFunction = null;
 
     $: trackColor = `linear-gradient(to right, white 0%, white ${(value - 1) * 25}%, #ff4081 ${(value - 1) * 25}%, #ff4081 100%)`;
