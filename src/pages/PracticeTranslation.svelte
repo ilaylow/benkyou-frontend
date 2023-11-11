@@ -34,7 +34,8 @@
             // Get current "from" language
             let fromLanguage = sessionStorage.getItem('from_language') || "Japanese";
             let difficulty = sessionStorage.getItem('difficulty') || 3;
-            data = await getTranslationQuestion(fromLanguage, difficulty);
+            let subject = sessionStorage.getItem("subject") || "";
+            data = await getTranslationQuestion(fromLanguage, difficulty, subject);
 
             // data = {
             //     id: "123123123123123",
@@ -105,6 +106,10 @@
         window.location.reload()
     }
 
+    function handleHome() {
+        navigate('/')
+    }
+
     function handleLogOut() {
         localStorage.clear();
         sessionStorage.clear();
@@ -126,6 +131,15 @@
     .button-container {
         display: flexbox;
     }
+
+    .button-container-logout {
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        margin-left: 60rem;
+        justify-content: space-between;
+    }
+
 </style>
 
 <main>
@@ -143,7 +157,10 @@
         <Loading />
     {:else}
         <!-- Practice Page -->
-        <Button style="logout" on:click={handleLogOut} text="ログアウト"/>
+        <div class="button-container-logout">
+            <Button style="home" on:click={handleHome} text="ホーム"/>
+            <Button style="logout" on:click={handleLogOut} text="ログアウト"/>
+        </div>
         <PracticeInput translations={data} tokenizer={tokenizer}/>
     {/if}   
 </main>

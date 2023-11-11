@@ -28,11 +28,12 @@ const getMarkRequestOptions = (body, headers) => {
     }
 }
 
-const getTranslationQuestion = async (fromLanguage, difficulty) => {
+const getTranslationQuestion = async (fromLanguage, difficulty, subject) => {
     let jwt = localStorage.getItem('jwt_token');
     let request = {
         japanese_level: `N${difficulty}`, // Change this after
         from_language: fromLanguage,
+        subject: subject.trim(),
     }
     const response = await fetch(getQuestionUrl, getQuestionRequestOptions(request, setHeaders(jwt)));
     return await response.json();

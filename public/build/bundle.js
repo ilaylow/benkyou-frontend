@@ -2627,9 +2627,9 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(/*text*/ ctx[0]);
-    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-15k5187");
+    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-12637zq");
     			button.disabled = /*loading*/ ctx[1];
-    			add_location(button, file$9, 102, 0, 2113);
+    			add_location(button, file$9, 118, 0, 2436);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2646,7 +2646,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*text*/ 1) set_data_dev(t, /*text*/ ctx[0]);
 
-    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-15k5187")) {
+    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-12637zq")) {
     				attr_dev(button, "class", button_class_value);
     			}
 
@@ -5571,11 +5571,12 @@ var app = (function () {
         }
     };
 
-    const getTranslationQuestion = async (fromLanguage, difficulty) => {
+    const getTranslationQuestion = async (fromLanguage, difficulty, subject) => {
         let jwt = localStorage.getItem('jwt_token');
         let request = {
             japanese_level: `N${difficulty}`, // Change this after
             from_language: fromLanguage,
+            subject: subject.trim(),
         };
         const response = await fetch(getQuestionUrl, getQuestionRequestOptions(request, setHeaders(jwt)));
         return await response.json();
@@ -6302,13 +6303,13 @@ var app = (function () {
     			attr_dev(input, "step", "1");
     			input.value = /*value*/ ctx[0];
     			attr_dev(input, "class", "svelte-9dv56y");
-    			add_location(input, file$2, 70, 4, 1872);
+    			add_location(input, file$2, 70, 4, 1834);
     			attr_dev(p0, "class", "svelte-9dv56y");
-    			add_location(p0, file$2, 73, 4, 2042);
+    			add_location(p0, file$2, 73, 4, 2004);
     			attr_dev(p1, "class", "para-reminder svelte-9dv56y");
-    			add_location(p1, file$2, 74, 4, 2068);
+    			add_location(p1, file$2, 74, 4, 2030);
     			attr_dev(div, "class", "svelte-9dv56y");
-    			add_location(div, file$2, 68, 0, 1834);
+    			add_location(div, file$2, 68, 0, 1796);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6363,11 +6364,7 @@ var app = (function () {
     	let trackColor;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Slider', slots, []);
-
-    	let { value = sessionStorage.getItem("difficulty")
-    	? sessionStorage.getItem("difficulty")
-    	: 5 } = $$props;
-
+    	let { value = sessionStorage.getItem("difficulty") || 3 } = $$props;
     	let { childFunction = null } = $$props;
 
     	// Function to handle value changes
@@ -6453,36 +6450,36 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[12] = list[i].id;
-    	child_ctx[13] = list[i].question;
-    	child_ctx[14] = list[i].tokenized_question;
-    	child_ctx[15] = list[i].answer;
-    	child_ctx[16] = list[i].solution;
-    	child_ctx[17] = list[i].tokenized_solution;
-    	child_ctx[18] = list[i].score;
-    	child_ctx[19] = list;
-    	child_ctx[20] = i;
+    	child_ctx[15] = list[i].id;
+    	child_ctx[16] = list[i].question;
+    	child_ctx[17] = list[i].tokenized_question;
+    	child_ctx[18] = list[i].answer;
+    	child_ctx[19] = list[i].solution;
+    	child_ctx[20] = list[i].tokenized_solution;
+    	child_ctx[21] = list[i].score;
+    	child_ctx[22] = list;
+    	child_ctx[23] = i;
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i].surface_form;
-    	child_ctx[22] = list[i].reading;
+    	child_ctx[24] = list[i].surface_form;
+    	child_ctx[25] = list[i].reading;
     	return child_ctx;
     }
 
     function get_each_context_2(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i].surface_form;
-    	child_ctx[22] = list[i].reading;
+    	child_ctx[24] = list[i].surface_form;
+    	child_ctx[25] = list[i].reading;
     	return child_ctx;
     }
 
-    // (216:12) {:else}
+    // (245:12) {:else}
     function create_else_block_2(ctx) {
     	let each_1_anchor;
-    	let each_value_2 = /*tokenized_question*/ ctx[14];
+    	let each_value_2 = /*tokenized_question*/ ctx[17];
     	validate_each_argument(each_value_2);
     	let each_blocks = [];
 
@@ -6508,8 +6505,8 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations, tokenShouldShowFurigana, showFurigana*/ 137) {
-    				each_value_2 = /*tokenized_question*/ ctx[14];
+    			if (dirty & /*translations, tokenShouldShowFurigana, showFurigana*/ 273) {
+    				each_value_2 = /*tokenized_question*/ ctx[17];
     				validate_each_argument(each_value_2);
     				let i;
 
@@ -6542,32 +6539,32 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(216:12) {:else}",
+    		source: "(245:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:12) {#if tokenized_question == null}
+    // (243:12) {#if tokenized_question == null}
     function create_if_block_2(ctx) {
     	let p;
-    	let t_value = /*question*/ ctx[13] + "";
+    	let t_value = /*question*/ ctx[16] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "question-para svelte-152mbxr");
-    			add_location(p, file$1, 214, 16, 6535);
+    			attr_dev(p, "class", "question-para svelte-c1y2uk");
+    			add_location(p, file$1, 243, 16, 7451);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
     			append_dev(p, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t_value !== (t_value = /*question*/ ctx[13] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*translations*/ 1 && t_value !== (t_value = /*question*/ ctx[16] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -6578,17 +6575,17 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(214:12) {#if tokenized_question == null}",
+    		source: "(243:12) {#if tokenized_question == null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (222:20) {:else}
+    // (251:20) {:else}
     function create_else_block_3(ctx) {
     	let ruby;
-    	let t0_value = /*surface_form*/ ctx[21] + "";
+    	let t0_value = /*surface_form*/ ctx[24] + "";
     	let t0;
     	let t1;
 
@@ -6597,8 +6594,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "svelte-152mbxr");
-    			add_location(ruby, file$1, 222, 24, 6935);
+    			attr_dev(ruby, "class", "svelte-c1y2uk");
+    			add_location(ruby, file$1, 251, 24, 7851);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6606,7 +6603,7 @@ var app = (function () {
     			append_dev(ruby, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[21] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[24] + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ruby);
@@ -6617,20 +6614,20 @@ var app = (function () {
     		block,
     		id: create_else_block_3.name,
     		type: "else",
-    		source: "(222:20) {:else}",
+    		source: "(251:20) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+    // (247:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
     function create_if_block_3(ctx) {
     	let ruby;
-    	let t0_value = /*surface_form*/ ctx[21] + "";
+    	let t0_value = /*surface_form*/ ctx[24] + "";
     	let t0;
     	let rt;
-    	let t1_value = /*reading*/ ctx[22] + "";
+    	let t1_value = /*reading*/ ctx[25] + "";
     	let t1;
     	let t2;
 
@@ -6641,9 +6638,9 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(rt, file$1, 219, 42, 6829);
-    			attr_dev(ruby, "class", "svelte-152mbxr");
-    			add_location(ruby, file$1, 218, 24, 6779);
+    			add_location(rt, file$1, 248, 42, 7745);
+    			attr_dev(ruby, "class", "svelte-c1y2uk");
+    			add_location(ruby, file$1, 247, 24, 7695);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6653,8 +6650,8 @@ var app = (function () {
     			append_dev(ruby, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[21] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*translations*/ 1 && t1_value !== (t1_value = /*reading*/ ctx[22] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[24] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*translations*/ 1 && t1_value !== (t1_value = /*reading*/ ctx[25] + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ruby);
@@ -6665,21 +6662,21 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(218:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
+    		source: "(247:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (217:16) {#each tokenized_question as { surface_form, reading }}
+    // (246:16) {#each tokenized_question as { surface_form, reading }}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
 
     	function select_block_type_1(ctx, dirty) {
-    		if (dirty & /*translations, showFurigana*/ 9) show_if = null;
-    		if (show_if == null) show_if = !!(/*tokenShouldShowFurigana*/ ctx[7](/*surface_form*/ ctx[21]) && /*showFurigana*/ ctx[3]);
+    		if (dirty & /*translations, showFurigana*/ 17) show_if = null;
+    		if (show_if == null) show_if = !!(/*tokenShouldShowFurigana*/ ctx[8](/*surface_form*/ ctx[24]) && /*showFurigana*/ ctx[4]);
     		if (show_if) return create_if_block_3;
     		return create_else_block_3;
     	}
@@ -6719,17 +6716,17 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(217:16) {#each tokenized_question as { surface_form, reading }}",
+    		source: "(246:16) {#each tokenized_question as { surface_form, reading }}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (233:16) {:else}
+    // (262:16) {:else}
     function create_else_block$1(ctx) {
     	let each_1_anchor;
-    	let each_value_1 = /*tokenized_solution*/ ctx[17];
+    	let each_value_1 = /*tokenized_solution*/ ctx[20];
     	validate_each_argument(each_value_1);
     	let each_blocks = [];
 
@@ -6755,8 +6752,8 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations, tokenShouldShowFurigana, showFurigana*/ 137) {
-    				each_value_1 = /*tokenized_solution*/ ctx[17];
+    			if (dirty & /*translations, tokenShouldShowFurigana, showFurigana*/ 273) {
+    				each_value_1 = /*tokenized_solution*/ ctx[20];
     				validate_each_argument(each_value_1);
     				let i;
 
@@ -6789,32 +6786,32 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(233:16) {:else}",
+    		source: "(262:16) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (231:16) {#if tokenized_solution == null}
+    // (260:16) {#if tokenized_solution == null}
     function create_if_block$1(ctx) {
     	let p;
-    	let t_value = /*solution*/ ctx[16] + "";
+    	let t_value = /*solution*/ ctx[19] + "";
     	let t;
 
     	const block = {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "svelte-152mbxr");
-    			add_location(p, file$1, 231, 20, 7358);
+    			attr_dev(p, "class", "svelte-c1y2uk");
+    			add_location(p, file$1, 260, 20, 8274);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
     			append_dev(p, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t_value !== (t_value = /*solution*/ ctx[16] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*translations*/ 1 && t_value !== (t_value = /*solution*/ ctx[19] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(p);
@@ -6825,17 +6822,17 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(231:16) {#if tokenized_solution == null}",
+    		source: "(260:16) {#if tokenized_solution == null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (239:24) {:else}
+    // (268:24) {:else}
     function create_else_block_1(ctx) {
     	let ruby;
-    	let t0_value = /*surface_form*/ ctx[21] + "";
+    	let t0_value = /*surface_form*/ ctx[24] + "";
     	let t0;
     	let t1;
 
@@ -6844,8 +6841,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "solution-ruby svelte-152mbxr");
-    			add_location(ruby, file$1, 239, 28, 7810);
+    			attr_dev(ruby, "class", "solution-ruby svelte-c1y2uk");
+    			add_location(ruby, file$1, 268, 28, 8726);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6853,7 +6850,7 @@ var app = (function () {
     			append_dev(ruby, t1);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[21] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[24] + "")) set_data_dev(t0, t0_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ruby);
@@ -6864,20 +6861,20 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(239:24) {:else}",
+    		source: "(268:24) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (235:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+    // (264:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
     function create_if_block_1$1(ctx) {
     	let ruby;
-    	let t0_value = /*surface_form*/ ctx[21] + "";
+    	let t0_value = /*surface_form*/ ctx[24] + "";
     	let t0;
     	let rt;
-    	let t1_value = /*reading*/ ctx[22] + "";
+    	let t1_value = /*reading*/ ctx[25] + "";
     	let t1;
     	let t2;
 
@@ -6888,10 +6885,10 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr_dev(rt, "class", "solution-rt svelte-152mbxr");
-    			add_location(rt, file$1, 236, 46, 7672);
-    			attr_dev(ruby, "class", "solution-ruby svelte-152mbxr");
-    			add_location(ruby, file$1, 235, 28, 7596);
+    			attr_dev(rt, "class", "solution-rt svelte-c1y2uk");
+    			add_location(rt, file$1, 265, 46, 8588);
+    			attr_dev(ruby, "class", "solution-ruby svelte-c1y2uk");
+    			add_location(ruby, file$1, 264, 28, 8512);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6901,8 +6898,8 @@ var app = (function () {
     			append_dev(ruby, t2);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[21] + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*translations*/ 1 && t1_value !== (t1_value = /*reading*/ ctx[22] + "")) set_data_dev(t1, t1_value);
+    			if (dirty & /*translations*/ 1 && t0_value !== (t0_value = /*surface_form*/ ctx[24] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*translations*/ 1 && t1_value !== (t1_value = /*reading*/ ctx[25] + "")) set_data_dev(t1, t1_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(ruby);
@@ -6913,21 +6910,21 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(235:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
+    		source: "(264:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (234:20) {#each tokenized_solution as { surface_form, reading }}
+    // (263:20) {#each tokenized_solution as { surface_form, reading }}
     function create_each_block_1(ctx) {
     	let show_if;
     	let if_block_anchor;
 
     	function select_block_type_3(ctx, dirty) {
-    		if (dirty & /*translations, showFurigana*/ 9) show_if = null;
-    		if (show_if == null) show_if = !!(/*tokenShouldShowFurigana*/ ctx[7](/*surface_form*/ ctx[21]) && /*showFurigana*/ ctx[3]);
+    		if (dirty & /*translations, showFurigana*/ 17) show_if = null;
+    		if (show_if == null) show_if = !!(/*tokenShouldShowFurigana*/ ctx[8](/*surface_form*/ ctx[24]) && /*showFurigana*/ ctx[4]);
     		if (show_if) return create_if_block_1$1;
     		return create_else_block_1;
     	}
@@ -6967,14 +6964,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(234:20) {#each tokenized_solution as { surface_form, reading }}",
+    		source: "(263:20) {#each tokenized_solution as { surface_form, reading }}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (212:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}
+    // (241:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}
     function create_each_block(ctx) {
     	let div1;
     	let t0;
@@ -6984,7 +6981,7 @@ var app = (function () {
     	let t2;
     	let p;
     	let t3;
-    	let t4_value = /*score*/ ctx[18] + "";
+    	let t4_value = /*score*/ ctx[21] + "";
     	let t4;
     	let t5;
     	let div0_class_value;
@@ -6992,23 +6989,23 @@ var app = (function () {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*tokenized_question*/ ctx[14] == null) return create_if_block_2;
+    		if (/*tokenized_question*/ ctx[17] == null) return create_if_block_2;
     		return create_else_block_2;
     	}
 
     	let current_block_type = select_block_type(ctx);
     	let if_block0 = current_block_type(ctx);
 
-    	function input_input_handler() {
-    		/*input_input_handler*/ ctx[10].call(input, /*each_value*/ ctx[19], /*each_index*/ ctx[20]);
+    	function input_input_handler_1() {
+    		/*input_input_handler_1*/ ctx[13].call(input, /*each_value*/ ctx[22], /*each_index*/ ctx[23]);
     	}
 
-    	function input_handler(...args) {
-    		return /*input_handler*/ ctx[11](/*id*/ ctx[12], ...args);
+    	function input_handler_1(...args) {
+    		return /*input_handler_1*/ ctx[14](/*id*/ ctx[15], ...args);
     	}
 
     	function select_block_type_2(ctx, dirty) {
-    		if (/*tokenized_solution*/ ctx[17] == null) return create_if_block$1;
+    		if (/*tokenized_solution*/ ctx[20] == null) return create_if_block$1;
     		return create_else_block$1;
     	}
 
@@ -7031,21 +7028,21 @@ var app = (function () {
     			t5 = text("/5");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "答え。。。");
-    			attr_dev(input, "class", "svelte-152mbxr");
-    			add_location(input, file$1, 228, 12, 7103);
-    			attr_dev(p, "class", "svelte-152mbxr");
-    			add_location(p, file$1, 245, 16, 8024);
-    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[2] ? 'is-shown' : '') + " svelte-152mbxr");
-    			add_location(div0, file$1, 229, 12, 7221);
-    			attr_dev(div1, "class", "question svelte-152mbxr");
-    			add_location(div1, file$1, 212, 8, 6449);
+    			attr_dev(input, "class", "svelte-c1y2uk");
+    			add_location(input, file$1, 257, 12, 8019);
+    			attr_dev(p, "class", "svelte-c1y2uk");
+    			add_location(p, file$1, 274, 16, 8940);
+    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-c1y2uk");
+    			add_location(div0, file$1, 258, 12, 8137);
+    			attr_dev(div1, "class", "question svelte-c1y2uk");
+    			add_location(div1, file$1, 241, 8, 7365);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
     			if_block0.m(div1, null);
     			append_dev(div1, t0);
     			append_dev(div1, input);
-    			set_input_value(input, /*answer*/ ctx[15]);
+    			set_input_value(input, /*answer*/ ctx[18]);
     			append_dev(div1, t1);
     			append_dev(div1, div0);
     			if_block1.m(div0, null);
@@ -7057,8 +7054,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", input_input_handler),
-    					listen_dev(input, "input", input_handler, false, false, false, false)
+    					listen_dev(input, "input", input_input_handler_1),
+    					listen_dev(input, "input", input_handler_1, false, false, false, false)
     				];
 
     				mounted = true;
@@ -7079,8 +7076,8 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty & /*translations*/ 1 && input.value !== /*answer*/ ctx[15]) {
-    				set_input_value(input, /*answer*/ ctx[15]);
+    			if (dirty & /*translations*/ 1 && input.value !== /*answer*/ ctx[18]) {
+    				set_input_value(input, /*answer*/ ctx[18]);
     			}
 
     			if (current_block_type_1 === (current_block_type_1 = select_block_type_2(ctx)) && if_block1) {
@@ -7095,9 +7092,9 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty & /*translations*/ 1 && t4_value !== (t4_value = /*score*/ ctx[18] + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*translations*/ 1 && t4_value !== (t4_value = /*score*/ ctx[21] + "")) set_data_dev(t4, t4_value);
 
-    			if (dirty & /*showSolution*/ 4 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[2] ? 'is-shown' : '') + " svelte-152mbxr")) {
+    			if (dirty & /*showSolution*/ 8 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-c1y2uk")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
     		},
@@ -7114,7 +7111,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(212:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}",
+    		source: "(241:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}",
     		ctx
     	});
 
@@ -7122,31 +7119,38 @@ var app = (function () {
     }
 
     function create_fragment$2(ctx) {
-    	let div3;
+    	let div4;
     	let h1;
     	let t1;
-    	let slider;
-    	let t2;
     	let div0;
-    	let h2;
+    	let input;
+    	let t2;
+    	let p;
     	let t4;
-    	let button0;
+    	let slider;
     	let t5;
+    	let div1;
+    	let h2;
+    	let t7;
+    	let button0;
+    	let t8;
     	let toggle;
     	let updating_value;
-    	let t6;
-    	let button1;
-    	let t7;
-    	let t8;
-    	let div2;
-    	let button2;
     	let t9;
-    	let div1;
+    	let button1;
     	let t10;
+    	let t11;
+    	let div3;
+    	let button2;
+    	let t12;
+    	let div2;
+    	let t13;
     	let error;
-    	let div2_class_value;
     	let div3_class_value;
+    	let div4_class_value;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	slider = new Slider({
     			props: { childFunction: handleDifficultyChange },
@@ -7164,13 +7168,13 @@ var app = (function () {
     	button0.$on("click", handleSwapFromLanguage);
 
     	function toggle_value_binding(value) {
-    		/*toggle_value_binding*/ ctx[9](value);
+    		/*toggle_value_binding*/ ctx[12](value);
     	}
 
     	let toggle_props = { label: "Furigana", design: "slider" };
 
-    	if (/*showFurigana*/ ctx[3] !== void 0) {
-    		toggle_props.value = /*showFurigana*/ ctx[3];
+    	if (/*showFurigana*/ ctx[4] !== void 0) {
+    		toggle_props.value = /*showFurigana*/ ctx[4];
     	}
 
     	toggle = new Toggle({ props: toggle_props, $$inline: true });
@@ -7193,107 +7197,140 @@ var app = (function () {
     	button2 = new Button({
     			props: {
     				text: "確認",
-    				loading: /*isMarking*/ ctx[1]
+    				loading: /*isMarking*/ ctx[2]
     			},
     			$$inline: true
     		});
 
-    	button2.$on("click", /*handleMark*/ ctx[6]);
+    	button2.$on("click", /*handleMark*/ ctx[7]);
 
     	error = new Error$1({
-    			props: { showError: /*showError*/ ctx[4] },
+    			props: { showError: /*showError*/ ctx[5] },
     			$$inline: true
     		});
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div4 = element("div");
     			h1 = element("h1");
-    			h1.textContent = "練習しましょう";
+    			h1.textContent = "翻訳練習しましょう";
     			t1 = space();
-    			create_component(slider.$$.fragment);
-    			t2 = space();
     			div0 = element("div");
+    			input = element("input");
+    			t2 = space();
+    			p = element("p");
+    			p.textContent = "＊強調したい所（任意）（e.g. Sports, School, Travelling） ＊入力してから、ページを更新してください";
+    			t4 = space();
+    			create_component(slider.$$.fragment);
+    			t5 = space();
+    			div1 = element("div");
     			h2 = element("h2");
     			h2.textContent = "下一つ一つの文を翻訳して答えを入力してください。";
-    			t4 = space();
-    			create_component(button0.$$.fragment);
-    			t5 = space();
-    			create_component(toggle.$$.fragment);
-    			t6 = space();
-    			create_component(button1.$$.fragment);
     			t7 = space();
+    			create_component(button0.$$.fragment);
+    			t8 = space();
+    			create_component(toggle.$$.fragment);
+    			t9 = space();
+    			create_component(button1.$$.fragment);
+    			t10 = space();
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t8 = space();
-    			div2 = element("div");
+    			t11 = space();
+    			div3 = element("div");
     			create_component(button2.$$.fragment);
-    			t9 = space();
-    			div1 = element("div");
-    			t10 = space();
+    			t12 = space();
+    			div2 = element("div");
+    			t13 = space();
     			create_component(error.$$.fragment);
-    			attr_dev(h1, "class", "svelte-152mbxr");
-    			add_location(h1, file$1, 203, 4, 5884);
-    			attr_dev(h2, "class", "svelte-152mbxr");
-    			add_location(h2, file$1, 206, 8, 6000);
-    			attr_dev(div0, "class", "header-container svelte-152mbxr");
-    			add_location(div0, file$1, 205, 4, 5960);
-    			attr_dev(div1, "class", "loading-icon svelte-152mbxr");
-    			add_location(div1, file$1, 251, 8, 8245);
-    			attr_dev(div2, "class", div2_class_value = "button-container " + (/*isMarking*/ ctx[1] ? 'is-marking' : '') + " svelte-152mbxr");
-    			add_location(div2, file$1, 249, 4, 8102);
-    			attr_dev(div3, "class", div3_class_value = "container " + (/*isMarking*/ ctx[1] ? 'is-marking' : '') + " svelte-152mbxr");
-    			add_location(div3, file$1, 202, 0, 5823);
+    			attr_dev(h1, "class", "svelte-c1y2uk");
+    			add_location(h1, file$1, 228, 4, 6519);
+    			attr_dev(input, "class", "subject svelte-c1y2uk");
+    			attr_dev(input, "type", "text");
+    			attr_dev(input, "placeholder", "サブジェクト");
+    			add_location(input, file$1, 230, 8, 6584);
+    			attr_dev(p, "class", "note svelte-c1y2uk");
+    			add_location(p, file$1, 231, 8, 6719);
+    			attr_dev(div0, "class", "subject-container svelte-c1y2uk");
+    			add_location(div0, file$1, 229, 4, 6543);
+    			attr_dev(h2, "class", "svelte-c1y2uk");
+    			add_location(h2, file$1, 235, 8, 6916);
+    			attr_dev(div1, "class", "header-container svelte-c1y2uk");
+    			add_location(div1, file$1, 234, 4, 6876);
+    			attr_dev(div2, "class", "loading-icon svelte-c1y2uk");
+    			add_location(div2, file$1, 280, 8, 9161);
+    			attr_dev(div3, "class", div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-c1y2uk");
+    			add_location(div3, file$1, 278, 4, 9018);
+    			attr_dev(div4, "class", div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-c1y2uk");
+    			add_location(div4, file$1, 227, 0, 6458);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, h1);
-    			append_dev(div3, t1);
-    			mount_component(slider, div3, null);
-    			append_dev(div3, t2);
-    			append_dev(div3, div0);
-    			append_dev(div0, h2);
-    			append_dev(div0, t4);
-    			mount_component(button0, div0, null);
-    			append_dev(div0, t5);
-    			mount_component(toggle, div0, null);
-    			append_dev(div0, t6);
-    			mount_component(button1, div0, null);
-    			append_dev(div3, t7);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, h1);
+    			append_dev(div4, t1);
+    			append_dev(div4, div0);
+    			append_dev(div0, input);
+    			set_input_value(input, /*subject*/ ctx[1]);
+    			append_dev(div0, t2);
+    			append_dev(div0, p);
+    			append_dev(div4, t4);
+    			mount_component(slider, div4, null);
+    			append_dev(div4, t5);
+    			append_dev(div4, div1);
+    			append_dev(div1, h2);
+    			append_dev(div1, t7);
+    			mount_component(button0, div1, null);
+    			append_dev(div1, t8);
+    			mount_component(toggle, div1, null);
+    			append_dev(div1, t9);
+    			mount_component(button1, div1, null);
+    			append_dev(div4, t10);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				if (each_blocks[i]) {
-    					each_blocks[i].m(div3, null);
+    					each_blocks[i].m(div4, null);
     				}
     			}
 
-    			append_dev(div3, t8);
+    			append_dev(div4, t11);
+    			append_dev(div4, div3);
+    			mount_component(button2, div3, null);
+    			append_dev(div3, t12);
     			append_dev(div3, div2);
-    			mount_component(button2, div2, null);
-    			append_dev(div2, t9);
-    			append_dev(div2, div1);
-    			append_dev(div2, t10);
-    			mount_component(error, div2, null);
+    			append_dev(div3, t13);
+    			mount_component(error, div3, null);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[10]),
+    					listen_dev(input, "input", /*input_handler*/ ctx[11], false, false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
     		p: function update(ctx, [dirty]) {
+    			if (dirty & /*subject*/ 2 && input.value !== /*subject*/ ctx[1]) {
+    				set_input_value(input, /*subject*/ ctx[1]);
+    			}
+
     			const toggle_changes = {};
 
-    			if (!updating_value && dirty & /*showFurigana*/ 8) {
+    			if (!updating_value && dirty & /*showFurigana*/ 16) {
     				updating_value = true;
-    				toggle_changes.value = /*showFurigana*/ ctx[3];
+    				toggle_changes.value = /*showFurigana*/ ctx[4];
     				add_flush_callback(() => updating_value = false);
     			}
 
     			toggle.$set(toggle_changes);
 
-    			if (dirty & /*showSolution, translations, tokenShouldShowFurigana, showFurigana, handleInput*/ 173) {
+    			if (dirty & /*showSolution, translations, tokenShouldShowFurigana, showFurigana, handleInput*/ 345) {
     				each_value = /*translations*/ ctx[0].sentence_pairs;
     				validate_each_argument(each_value);
     				let i;
@@ -7306,7 +7343,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(div3, t8);
+    						each_blocks[i].m(div4, t11);
     					}
     				}
 
@@ -7318,18 +7355,18 @@ var app = (function () {
     			}
 
     			const button2_changes = {};
-    			if (dirty & /*isMarking*/ 2) button2_changes.loading = /*isMarking*/ ctx[1];
+    			if (dirty & /*isMarking*/ 4) button2_changes.loading = /*isMarking*/ ctx[2];
     			button2.$set(button2_changes);
     			const error_changes = {};
-    			if (dirty & /*showError*/ 16) error_changes.showError = /*showError*/ ctx[4];
+    			if (dirty & /*showError*/ 32) error_changes.showError = /*showError*/ ctx[5];
     			error.$set(error_changes);
 
-    			if (!current || dirty & /*isMarking*/ 2 && div2_class_value !== (div2_class_value = "button-container " + (/*isMarking*/ ctx[1] ? 'is-marking' : '') + " svelte-152mbxr")) {
-    				attr_dev(div2, "class", div2_class_value);
+    			if (!current || dirty & /*isMarking*/ 4 && div3_class_value !== (div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-c1y2uk")) {
+    				attr_dev(div3, "class", div3_class_value);
     			}
 
-    			if (!current || dirty & /*isMarking*/ 2 && div3_class_value !== (div3_class_value = "container " + (/*isMarking*/ ctx[1] ? 'is-marking' : '') + " svelte-152mbxr")) {
-    				attr_dev(div3, "class", div3_class_value);
+    			if (!current || dirty & /*isMarking*/ 4 && div4_class_value !== (div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-c1y2uk")) {
+    				attr_dev(div4, "class", div4_class_value);
     			}
     		},
     		i: function intro(local) {
@@ -7352,7 +7389,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div4);
     			destroy_component(slider);
     			destroy_component(button0);
     			destroy_component(toggle);
@@ -7360,6 +7397,8 @@ var app = (function () {
     			destroy_each(each_blocks, detaching);
     			destroy_component(button2);
     			destroy_component(error);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -7393,11 +7432,17 @@ var app = (function () {
     	sessionStorage.setItem("difficulty", event.target.value);
     }
 
+    function handleSubjectInput(event) {
+    	console.log(event.target.value);
+    	sessionStorage.setItem("subject", event.target.value);
+    }
+
     function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('PracticeInput', slots, []);
     	let { translations = [] } = $$props;
     	let { tokenizer = null } = $$props;
+    	let subject = sessionStorage.getItem("subject") || "";
 
     	// Reactive variable for loading state
     	let isMarking = false;
@@ -7427,20 +7472,20 @@ var app = (function () {
     	}
 
     	async function handleMark() {
-    		$$invalidate(4, showError = false);
-    		$$invalidate(1, isMarking = true);
+    		$$invalidate(5, showError = false);
+    		$$invalidate(2, isMarking = true);
 
     		try {
     			const markedTranslations = await getTranslationMark(translations);
     			tokenizeTranslations(markedTranslations, tokenizer);
     			$$invalidate(0, translations = markedTranslations);
-    			$$invalidate(2, showSolution = true);
+    			$$invalidate(3, showSolution = true);
     		} catch(error) {
     			console.error('Error fetching data:', error);
-    			$$invalidate(4, showError = true);
+    			$$invalidate(5, showError = true);
     		}
 
-    		$$invalidate(1, isMarking = false);
+    		$$invalidate(2, isMarking = false);
     	}
 
     	function tokenShouldShowFurigana(token) {
@@ -7459,21 +7504,28 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<PracticeInput> was created with unknown prop '${key}'`);
     	});
 
-    	function toggle_value_binding(value) {
-    		showFurigana = value;
-    		$$invalidate(3, showFurigana);
+    	function input_input_handler() {
+    		subject = this.value;
+    		$$invalidate(1, subject);
     	}
 
-    	function input_input_handler(each_value, each_index) {
+    	const input_handler = event => handleSubjectInput(event);
+
+    	function toggle_value_binding(value) {
+    		showFurigana = value;
+    		$$invalidate(4, showFurigana);
+    	}
+
+    	function input_input_handler_1(each_value, each_index) {
     		each_value[each_index].answer = this.value;
     		$$invalidate(0, translations);
     	}
 
-    	const input_handler = (id, event) => handleInput(event, id);
+    	const input_handler_1 = (id, event) => handleInput(event, id);
 
     	$$self.$$set = $$props => {
     		if ('translations' in $$props) $$invalidate(0, translations = $$props.translations);
-    		if ('tokenizer' in $$props) $$invalidate(8, tokenizer = $$props.tokenizer);
+    		if ('tokenizer' in $$props) $$invalidate(9, tokenizer = $$props.tokenizer);
     	};
 
     	$$self.$capture_state = () => ({
@@ -7486,6 +7538,7 @@ var app = (function () {
     		Slider,
     		translations,
     		tokenizer,
+    		subject,
     		isMarking,
     		showSolution,
     		showFurigana,
@@ -7496,16 +7549,18 @@ var app = (function () {
     		getNextFromLanguage,
     		handleSwapFromLanguage,
     		handleDifficultyChange,
+    		handleSubjectInput,
     		tokenShouldShowFurigana
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('translations' in $$props) $$invalidate(0, translations = $$props.translations);
-    		if ('tokenizer' in $$props) $$invalidate(8, tokenizer = $$props.tokenizer);
-    		if ('isMarking' in $$props) $$invalidate(1, isMarking = $$props.isMarking);
-    		if ('showSolution' in $$props) $$invalidate(2, showSolution = $$props.showSolution);
-    		if ('showFurigana' in $$props) $$invalidate(3, showFurigana = $$props.showFurigana);
-    		if ('showError' in $$props) $$invalidate(4, showError = $$props.showError);
+    		if ('tokenizer' in $$props) $$invalidate(9, tokenizer = $$props.tokenizer);
+    		if ('subject' in $$props) $$invalidate(1, subject = $$props.subject);
+    		if ('isMarking' in $$props) $$invalidate(2, isMarking = $$props.isMarking);
+    		if ('showSolution' in $$props) $$invalidate(3, showSolution = $$props.showSolution);
+    		if ('showFurigana' in $$props) $$invalidate(4, showFurigana = $$props.showFurigana);
+    		if ('showError' in $$props) $$invalidate(5, showError = $$props.showError);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -7514,6 +7569,7 @@ var app = (function () {
 
     	return [
     		translations,
+    		subject,
     		isMarking,
     		showSolution,
     		showFurigana,
@@ -7522,16 +7578,18 @@ var app = (function () {
     		handleMark,
     		tokenShouldShowFurigana,
     		tokenizer,
-    		toggle_value_binding,
     		input_input_handler,
-    		input_handler
+    		input_handler,
+    		toggle_value_binding,
+    		input_input_handler_1,
+    		input_handler_1
     	];
     }
 
     class PracticeInput extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { translations: 0, tokenizer: 8 });
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { translations: 0, tokenizer: 9 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -7563,19 +7621,29 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\pages\\PracticeTranslation.svelte";
 
-    // (144:4) {:else}
+    // (158:4) {:else}
     function create_else_block(ctx) {
-    	let button;
-    	let t;
+    	let div;
+    	let button0;
+    	let t0;
+    	let button1;
+    	let t1;
     	let practiceinput;
     	let current;
 
-    	button = new Button({
+    	button0 = new Button({
+    			props: { style: "home", text: "ホーム" },
+    			$$inline: true
+    		});
+
+    	button0.$on("click", /*handleHome*/ ctx[3]);
+
+    	button1 = new Button({
     			props: { style: "logout", text: "ログアウト" },
     			$$inline: true
     		});
 
-    	button.$on("click", /*handleLogOut*/ ctx[3]);
+    	button1.$on("click", /*handleLogOut*/ ctx[4]);
 
     	practiceinput = new PracticeInput({
     			props: {
@@ -7587,13 +7655,21 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			create_component(button.$$.fragment);
-    			t = space();
+    			div = element("div");
+    			create_component(button0.$$.fragment);
+    			t0 = space();
+    			create_component(button1.$$.fragment);
+    			t1 = space();
     			create_component(practiceinput.$$.fragment);
+    			attr_dev(div, "class", "button-container-logout svelte-11hj8ec");
+    			add_location(div, file, 159, 8, 5726);
     		},
     		m: function mount(target, anchor) {
-    			mount_component(button, target, anchor);
-    			insert_dev(target, t, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(button0, div, null);
+    			append_dev(div, t0);
+    			mount_component(button1, div, null);
+    			insert_dev(target, t1, anchor);
     			mount_component(practiceinput, target, anchor);
     			current = true;
     		},
@@ -7605,18 +7681,22 @@ var app = (function () {
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(button.$$.fragment, local);
+    			transition_in(button0.$$.fragment, local);
+    			transition_in(button1.$$.fragment, local);
     			transition_in(practiceinput.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(button.$$.fragment, local);
+    			transition_out(button0.$$.fragment, local);
+    			transition_out(button1.$$.fragment, local);
     			transition_out(practiceinput.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			destroy_component(button, detaching);
-    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(div);
+    			destroy_component(button0);
+    			destroy_component(button1);
+    			if (detaching) detach_dev(t1);
     			destroy_component(practiceinput, detaching);
     		}
     	};
@@ -7625,14 +7705,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(144:4) {:else}",
+    		source: "(158:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (141:28) 
+    // (155:28) 
     function create_if_block_1(ctx) {
     	let loading;
     	let current;
@@ -7665,14 +7745,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(141:28) ",
+    		source: "(155:28) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (132:4) {#if error}
+    // (146:4) {#if error}
     function create_if_block(ctx) {
     	let div1;
     	let h1;
@@ -7690,7 +7770,7 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	button1.$on("click", /*handleLogOut*/ ctx[3]);
+    	button1.$on("click", /*handleLogOut*/ ctx[4]);
 
     	const block = {
     		c: function create() {
@@ -7702,11 +7782,11 @@ var app = (function () {
     			create_component(button0.$$.fragment);
     			t2 = space();
     			create_component(button1.$$.fragment);
-    			attr_dev(h1, "class", "svelte-paxoy3");
-    			add_location(h1, file, 134, 12, 5011);
-    			attr_dev(div0, "class", "button-container svelte-paxoy3");
-    			add_location(div0, file, 135, 12, 5056);
-    			add_location(div1, file, 133, 8, 4992);
+    			attr_dev(h1, "class", "svelte-11hj8ec");
+    			add_location(h1, file, 148, 12, 5339);
+    			attr_dev(div0, "class", "button-container svelte-11hj8ec");
+    			add_location(div0, file, 149, 12, 5384);
+    			add_location(div1, file, 147, 8, 5320);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7741,7 +7821,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(132:4) {#if error}",
+    		source: "(146:4) {#if error}",
     		ctx
     	});
 
@@ -7769,7 +7849,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			if_block.c();
-    			add_location(main, file, 130, 0, 4930);
+    			add_location(main, file, 144, 0, 5258);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7866,7 +7946,8 @@ var app = (function () {
     			let fromLanguage = sessionStorage.getItem('from_language') || "Japanese";
 
     			let difficulty = sessionStorage.getItem('difficulty') || 3;
-    			$$invalidate(0, data = await getTranslationQuestion(fromLanguage, difficulty));
+    			let subject = sessionStorage.getItem("subject") || "";
+    			$$invalidate(0, data = await getTranslationQuestion(fromLanguage, difficulty, subject));
 
     			// data = {
     			//     id: "123123123123123",
@@ -7933,6 +8014,10 @@ var app = (function () {
     		}
     	});
 
+    	function handleHome() {
+    		navigate('/');
+    	}
+
     	function handleLogOut() {
     		localStorage.clear();
     		sessionStorage.clear();
@@ -7963,6 +8048,7 @@ var app = (function () {
     		error,
     		tokenizer,
     		reloadPage,
+    		handleHome,
     		handleLogOut
     	});
 
@@ -7976,7 +8062,7 @@ var app = (function () {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [data, error, tokenizer, handleLogOut];
+    	return [data, error, tokenizer, handleHome, handleLogOut];
     }
 
     class PracticeTranslation extends SvelteComponentDev {

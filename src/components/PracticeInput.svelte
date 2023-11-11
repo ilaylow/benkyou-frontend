@@ -10,7 +10,7 @@
 
     export let translations = [];
     export let tokenizer = null;
-
+    let subject = sessionStorage.getItem("subject") || "";
     // Reactive variable for loading state
     let isMarking = false;
     let showSolution = false;
@@ -71,6 +71,11 @@
         sessionStorage.setItem("difficulty", event.target.value);
     }
 
+    function handleSubjectInput(event) {
+        console.log(event.target.value)
+        sessionStorage.setItem("subject", event.target.value);
+    }
+
     function tokenShouldShowFurigana(token) {
         for (const char of token) {
             if (wanakana.isKanji(char)) {
@@ -98,6 +103,26 @@
     
     .question {
         margin-bottom: 0.5em;
+    }
+
+    .subject-container {
+        display: flex;
+        align-items: center;
+        width: 45rem;
+        margin-bottom: -1%;
+    }
+
+    .subject-container .subject {
+        height: 1.8rem;
+    }
+
+    .subject-container .note{
+        margin-bottom: 1.75rem;
+        margin-left: 1rem;
+        font-size: 68%;
+        color: #807e7e;
+        white-space: nowrap;
+        font-weight: normal;
     }
   
     input[type="text"] {
@@ -201,7 +226,11 @@
 </style>
   
 <div class="container {isMarking ? 'is-marking' : ''}">
-    <h1>練習しましょう</h1>
+    <h1>翻訳練習しましょう</h1>
+    <div class="subject-container">
+        <input class="subject" type="text" bind:value={subject} on:input={(event) => handleSubjectInput(event)} placeholder="サブジェクト">
+        <p class="note">＊強調したい所（任意）（e.g. Sports, School, Travelling） ＊入力してから、ページを更新してください</p>
+    </div>
     <Slider childFunction={handleDifficultyChange}/>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>

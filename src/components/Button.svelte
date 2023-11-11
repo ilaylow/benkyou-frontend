@@ -28,6 +28,7 @@
 		transition: background-color 0.3s;
 		margin-top: 1.5rem;  /* Space above button */
 		margin-bottom: 1.5rem;
+		white-space: nowrap;
 	}
 
 	.error {
@@ -57,7 +58,6 @@
     }
 
 	.logout {
-        margin-left: 47%;
         background-color: #be780f;
 		color: #fff;
 		border: none;
@@ -82,6 +82,18 @@
 		transition: background-color 0.3s;
 	}
 
+	.home {
+        background-color: #ff4081;
+		color: #fff;
+		border: none;
+		padding: 0.7rem 1.5rem;
+		font-size: 1rem;
+		font-family: Meiryo, Yu Gothic, sans-serif;
+        text-decoration: bold;
+		border-radius: 0.25rem;
+		cursor: pointer;
+	}
+
 	.button:hover {
 		background-color: rgb(116, 19, 51);
 	}
@@ -96,6 +108,10 @@
 
 	.button.logout:hover {
 		background-color: rgb(139, 86, 6);
+	}
+
+	.button.home:hover {
+		background-color: rgb(116, 19, 51);
 	}
 
 </style>
