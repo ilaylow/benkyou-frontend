@@ -1,4 +1,4 @@
-<!-- src/components/StartButton.svelte -->
+<!-- src/components/Button.svelte -->
 <script>
 	import { createEventDispatcher } from 'svelte';
 

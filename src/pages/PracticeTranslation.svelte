@@ -10,6 +10,7 @@
 
     let data = null;
     let error = false;
+    let tokenizer = null;
 
     onMount(async () => {
         if (typeof window !== 'undefined') {
@@ -19,7 +20,7 @@
         }
 
         // Async load tokenizer
-        const tokenizer = await new Promise((resolve, reject) => {
+        tokenizer = await new Promise((resolve, reject) => {
             kuromoji.builder({ dicPath: "/dict/" }).build((err, builtTokenizer) => {
                 if (err) {
                     reject(err);
@@ -32,7 +33,8 @@
         try {
             // Get current "from" language
             let fromLanguage = sessionStorage.getItem('from_language') || "Japanese";
-            data = await getTranslationQuestion(fromLanguage);
+            let difficulty = sessionStorage.getItem('difficulty') || 3;
+            data = await getTranslationQuestion(fromLanguage, difficulty);
 
             // data = {
             //     id: "123123123123123",
@@ -106,7 +108,8 @@
     function handleLogOut() {
         localStorage.clear();
         sessionStorage.clear();
-        // localStorage.removeItem('from_language')
+        // localStorage.removeItem('difficulty');
+        // localStorage.removeItem('from_language');
         // localStorage.removeItem('jwt_token');
         // localStorage.removeItem('uid');
         navigate('/');
@@ -141,6 +144,6 @@
     {:else}
         <!-- Practice Page -->
         <Button style="logout" on:click={handleLogOut} text="ログアウト"/>
-        <PracticeInput translations={data}/>
+        <PracticeInput translations={data} tokenizer={tokenizer}/>
     {/if}   
 </main>

@@ -1,4 +1,5 @@
 <script>
+    // Taken from: https://svelte.dev/repl/d65a4e9f0ae74d1eb1b08d13e428af32?version=3.35.0
     // based on suggestions from:
     // Inclusive Components by Heydon Pickering https://inclusive-components.design/toggle-button/
     // On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/

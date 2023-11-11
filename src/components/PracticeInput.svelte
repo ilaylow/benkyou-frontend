@@ -6,8 +6,10 @@
     import Button from "./Button.svelte";
     import Toggle from "./Toggle.svelte";
     import Error from "./Error.svelte";
+    import Slider from "./Slider.svelte";
 
     export let translations = [];
+    export let tokenizer = null;
 
     // Reactive variable for loading state
     let isMarking = false;
@@ -36,17 +38,6 @@
     }
 
     async function handleMark() {
-        // Async load tokenizer
-        const tokenizer = await new Promise((resolve, reject) => {
-            kuromoji.builder({ dicPath: "/dict/" }).build((err, builtTokenizer) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(builtTokenizer);
-                }
-            });
-        });
-
         showError = false;
         isMarking = true;
         try {
@@ -74,6 +65,10 @@
     function handleSwapFromLanguage() {
         sessionStorage.setItem("from_language", getNextFromLanguage());
         window.location.reload();
+    }
+
+    function handleDifficultyChange(event) {
+        sessionStorage.setItem("difficulty", event.target.value);
     }
 
     function tokenShouldShowFurigana(token) {
@@ -207,6 +202,7 @@
   
 <div class="container {isMarking ? 'is-marking' : ''}">
     <h1>練習しましょう</h1>
+    <Slider childFunction={handleDifficultyChange}/>
     <div class="header-container">
         <h2>下一つ一つの文を翻訳して答えを入力してください。</h2>
         <Button style="swap" on:click={handleSwapFromLanguage} text="Translate from {getNextFromLanguage()}"/>
