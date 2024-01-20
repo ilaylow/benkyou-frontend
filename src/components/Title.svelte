@@ -6,7 +6,7 @@
 		font-family: Meiryo, Yu Gothic, sans-serif;
 		text-align: center;
 		text-shadow: 0.125rem 0.125rem 0.25rem #aaa;
-		margin-top: -3rem;
+		margin-top: 12rem;
 		margin-bottom: 1rem;
 	}
 

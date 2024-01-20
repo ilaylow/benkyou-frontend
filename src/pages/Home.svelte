@@ -27,9 +27,20 @@
             }
         }
     });
+
+    function handleLogOut() {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.reload()
+    }
 </script>
 
 <style>
+    
+    .logout-container {
+        margin-left: 65%;
+        margin-top: -20%;
+    }
 </style>
 
 <main>
@@ -38,6 +49,9 @@
     {:else if isSignUp}
         <SignIn/>
     {:else}
+        <div class="logout-container">
+            <Button style="logout" on:click={handleLogOut} text="ログアウト"/>
+        </div> 
         <Title />
         <Button on:click={goToPractice} text="翻訳練習"/>
         <Footer />
