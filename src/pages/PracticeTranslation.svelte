@@ -35,7 +35,13 @@
             let fromLanguage = sessionStorage.getItem('from_language') || "Japanese";
             let difficulty = sessionStorage.getItem('difficulty') || 3;
             let subject = sessionStorage.getItem("subject") || "";
-            data = await getTranslationQuestion(fromLanguage, difficulty, subject);
+            let storageData = JSON.parse(sessionStorage.getItem("translations"));
+            if (storageData != null) {
+                data = storageData;
+            } else {
+                data = await getTranslationQuestion(fromLanguage, difficulty, subject);
+                sessionStorage.setItem("translations", JSON.stringify(data));
+            }
 
             // data = {
             //     id: "123123123123123",
@@ -111,13 +117,13 @@
     }
 
     function handleLogOut() {
+        setTimeout(() => navigate('/'), 750)
         localStorage.clear();
         sessionStorage.clear();
         // localStorage.removeItem('difficulty');
         // localStorage.removeItem('from_language');
         // localStorage.removeItem('jwt_token');
         // localStorage.removeItem('uid');
-        navigate('/');
     }
 </script>
 

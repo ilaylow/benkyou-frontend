@@ -1,6 +1,6 @@
 <!-- src/components/PracticeInput.svelte -->
 <script>
-
+    import { onMount } from 'svelte';
     import { getTranslationMark, tokenizeTranslations } from "../services/translation";
     import * as wanakana from 'wanakana';
     import Button from "./Button.svelte";
@@ -16,6 +16,12 @@
     let showSolution = false;
     let showFurigana = false;
     let showError = false;
+
+    onMount(async () => {
+        if (translations.sentence_pairs[0].solution != "") {
+            showSolution = true;
+        }
+    })
 
     // A function to handle the input event
     function handleInput(event, id) {
@@ -45,6 +51,8 @@
             tokenizeTranslations(markedTranslations, tokenizer);
             translations = markedTranslations;
             showSolution = true;
+
+            sessionStorage.setItem("translations", JSON.stringify(translations))
         } catch (error) {
             console.error('Error fetching data:', error);
             showError = true;
@@ -53,6 +61,7 @@
     }
 
     function handleRefreshQuestions() {
+        sessionStorage.removeItem("translations")
         window.location.reload()
     }
 

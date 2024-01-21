@@ -31,7 +31,7 @@
     function handleLogOut() {
         localStorage.clear();
         sessionStorage.clear();
-        window.location.reload()
+        setTimeout(() => window.location.reload(), 750)
     }
 </script>
 
