@@ -73,6 +73,7 @@
 
     function handleSwapFromLanguage() {
         sessionStorage.setItem("from_language", getNextFromLanguage());
+        sessionStorage.removeItem("translations")
         window.location.reload();
     }
 
