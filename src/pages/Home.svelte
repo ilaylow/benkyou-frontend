@@ -39,7 +39,15 @@
     
     .logout-container {
         margin-left: 65%;
-        margin-top: -20%;
+        margin-bottom: 13vh;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 39vh;
     }
 </style>
 
@@ -52,8 +60,10 @@
         <div class="logout-container">
             <Button style="logout" on:click={handleLogOut} text="ログアウト"/>
         </div> 
-        <Title />
-        <Button on:click={goToPractice} text="翻訳練習"/>
+        <div class="title-container">
+            <Title />
+            <Button on:click={goToPractice} text="翻訳練習"/>
+        </div>
         <Footer />
     {/if}
 </main>

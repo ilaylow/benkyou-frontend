@@ -148,6 +148,7 @@
     }
 
     h1 {
+        font-size: clamp(25px, 3vw, 40px);
         margin-right: auto;
         font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: underline;
@@ -158,14 +159,14 @@
 
     h2 {
         color: #969494;
-        font-size: 40;
+        font-size: clamp(15px, 2vw, 25px);
         margin-bottom: 3%;
     }
 
     ruby {
       word-wrap: break-word; /* This ensures text goes to the next line */
       hyphens: auto; /* Optional: This will hyphenate words if necessary */
-      font-size: 120%;
+      font-size: clamp(17px, 1.1vw, 21px);
       font-family: Meiryo, Yu Gothic, sans-serif;
       font-weight: bold;
     }
@@ -173,7 +174,7 @@
     p {
       word-wrap: break-word; /* This ensures text goes to the next line */
       hyphens: auto; /* Optional: This will hyphenate words if necessary */
-      font-size: 120%;
+      font-size: clamp(18px, 1.1vw, 30px);
       font-family: Meiryo, Yu Gothic, sans-serif;
       font-weight: bold;
     }

@@ -134,6 +134,10 @@
         font-family: Meiryo, Yu Gothic, sans-serif;
     }
 
+    .error-header {
+		font-size: clamp(25px, 3vw, 35px);
+    }
+
     .button-container {
         display: flexbox;
     }
@@ -142,8 +146,8 @@
         width: 15rem;
         display: flex;
         align-items: center;
-        margin-left: 60rem;
-        justify-content: space-between;
+        margin-left: 55vw;
+        gap: 5%;
     }
 
 </style>
@@ -152,10 +156,10 @@
     {#if error}
         <!-- Error Page -->
         <div>
-            <h1>An error has occurred.</h1>
+            <h1 class="error-header">An error has occurred.</h1>
             <div class="button-container">
-                <Button on:click={reloadPage} text="リトライ"/>
-                <Button style="error" on:click={handleLogOut} text="ログアウト"/>
+                <Button on:click={reloadPage} text="再試行"/>
+                <Button style="error" on:click={handleHome} text="ホーム"/>
             </div>
         </div>
     {:else if data === null}

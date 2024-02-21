@@ -2,12 +2,11 @@
 <style>
 	/* Typography Styles */
 	h1 {
-		font-size: 4.5rem;
+		font-size: clamp(65px, 5.5vw, 80px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
 		text-align: center;
 		text-shadow: 0.125rem 0.125rem 0.25rem #aaa;
-		margin-top: 12rem;
-		margin-bottom: 1rem;
+		margin-bottom: 0.2vh;
 	}
 
 	.typewriter {
@@ -19,10 +18,11 @@
 		font-size: 1rem; /* Adjust the font-size to control the caret size */
         animation: typing 3s steps(40, end) forwards,  /* Added forwards to keep text visible */
                   blink-caret .75s step-end infinite;
+        margin-bottom: 0.5vh;
     }
 
     h3 {
-		font-size: 1.2rem;
+		font-size: clamp(15px, 1.2vw, 20px);
         font-family: Meiryo, Yu Gothic, sans-serif;
 		margin: 0%;
 		text-decoration: underline;

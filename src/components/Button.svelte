@@ -20,8 +20,8 @@
 		background-color: #ff4081;
 		color: #fff;
 		border: none;
-		padding: 1rem 2rem;
-		font-size: 1rem;
+		padding: 1.2vh 1.3vw;
+		font-size: clamp(14px, 1.4vw, 18px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
 		border-radius: 0.25rem;
 		cursor: pointer;
@@ -36,8 +36,8 @@
         background-color: #be780f;
 		color: #fff;
 		border: none;
-		padding: 1rem 2rem;
-		font-size: 1rem;
+		padding: 1.2vh 1.3vw;
+		font-size: clamp(14px, 1vw, 16px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: bold;
 		border-radius: 0.25rem;
@@ -49,8 +49,8 @@
         background-color: #686868;
 		color: #fff;
 		border: none;
-		padding: 0.5rem 1.4rem;
-		font-size: 1rem;
+		padding: 1vh 1.3vw;
+		font-size: clamp(15px, 0.9vw, 20px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: bold;
 		border-radius: 0.25rem;
@@ -61,8 +61,8 @@
         background-color: #be780f;
 		color: #fff;
 		border: none;
-		padding: 0.7rem 1.5rem;
-		font-size: 1rem;
+		padding: 1vh 1vw;
+		font-size: clamp(14px, 1vw, 16px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: bold;
 		border-radius: 0.25rem;
@@ -73,9 +73,9 @@
 		background-color: #ff4081;
 		color: #fff;
 		border: none;
-		padding: 0.7rem 0.7rem;
+		padding: 1.2vh 0.7vw;
 		margin-top: 0.2rem;
-		font-size: 0.9rem;
+		font-size: clamp(12px, 1vw, 14px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
 		border-radius: 1.5rem;
 		cursor: pointer;
@@ -86,8 +86,8 @@
         background-color: #ff4081;
 		color: #fff;
 		border: none;
-		padding: 0.7rem 1.5rem;
-		font-size: 1rem;
+		padding: 1vh 1vw;
+		font-size: clamp(13px, 1vw, 16px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: bold;
 		border-radius: 0.25rem;

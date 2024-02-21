@@ -44,7 +44,7 @@
     </button>
 </div>
 {:else if design == 'slider'}
-<div class="s s--slider" style="font-size:{fontSize}px">
+<div class="s s--slider">
     <span id={`switch-${uniqueID}`}>{label}</span>
     <button
         role="switch"
@@ -105,8 +105,9 @@
         margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
+        font-size: clamp(13px, 1vw, 15px);
         background-color: #504f4f;
-        padding: 0.5em 0.5em;
+        padding: 1.2vh 0.7vw;
         border-radius: 1rem;
     }
 
