@@ -38,8 +38,9 @@
 <style>
     
     .logout-container {
+        position: fixed;
+        margin-bottom: 90vh;
         margin-left: 65%;
-        margin-bottom: 13vh;
     }
 
     .title-container {
@@ -47,7 +48,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 39vh;
+        margin-bottom: 19vh;
     }
 </style>
 
