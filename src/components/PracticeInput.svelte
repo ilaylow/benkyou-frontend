@@ -166,7 +166,7 @@
     ruby {
       word-wrap: break-word; /* This ensures text goes to the next line */
       hyphens: auto; /* Optional: This will hyphenate words if necessary */
-      font-size: clamp(17px, 1.1vw, 21px);
+      font-size: clamp(17px, 1.1vw, 20px);
       font-family: Meiryo, Yu Gothic, sans-serif;
       font-weight: bold;
     }
