@@ -3267,9 +3267,9 @@ var app = (function () {
     			create_component(button1.$$.fragment);
     			t2 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(div0, "class", "logout-container svelte-rjbpgi");
+    			attr_dev(div0, "class", "logout-container svelte-gxw9o0");
     			add_location(div0, file$5, 60, 8, 1456);
-    			attr_dev(div1, "class", "title-container svelte-rjbpgi");
+    			attr_dev(div1, "class", "title-container svelte-gxw9o0");
     			add_location(div1, file$5, 63, 8, 1588);
     		},
     		m: function mount(target, anchor) {

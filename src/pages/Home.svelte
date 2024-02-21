@@ -48,7 +48,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 19vh;
+        margin-bottom: 17vh;
     }
 </style>
 
