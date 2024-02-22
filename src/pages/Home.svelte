@@ -50,6 +50,27 @@
         justify-content: flex-start;
         margin-bottom: 17vh;
     }
+
+    .translation-practice-button-container {
+        position: fixed;
+        margin-left: 63vw;
+        margin-top: 35vh;
+        transform: rotate(30deg);
+    }
+
+    .kanji-practice-button-container {
+        position: fixed;
+        margin-top: 35vh;
+        margin-right: 0vw;
+        transform: rotate(-15deg);
+    }
+
+    .sentence-analysis-button-container {
+        position: fixed;
+        margin-top: 20vh;
+        margin-right: 60vw;
+        transform: rotate(10deg);
+    }
 </style>
 
 <main>
@@ -63,7 +84,15 @@
         </div> 
         <div class="title-container">
             <Title />
-            <Button on:click={goToPractice} text="翻訳練習"/>
+            <div class="translation-practice-button-container">
+                <Button style="router" on:click={goToPractice} text="翻訳練習"/> 
+            </div>
+            <div class="kanji-practice-button-container">
+                <Button style="router kanji" on:click={goToPractice} text="漢字"/> 
+            </div>
+            <div class="sentence-analysis-button-container">
+                <Button style="router sentence-analysis" on:click={goToPractice} text="A.Iで文の分析"/> 
+            </div>
         </div>
         <Footer />
     {/if}
