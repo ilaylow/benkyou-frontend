@@ -6556,7 +6556,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (256:12) {:else}
+    // (266:12) {:else}
     function create_else_block_2(ctx) {
     	let each_1_anchor;
     	let each_value_2 = /*tokenized_question*/ ctx[17];
@@ -6619,14 +6619,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(256:12) {:else}",
+    		source: "(266:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (254:12) {#if tokenized_question == null}
+    // (264:12) {#if tokenized_question == null}
     function create_if_block_2(ctx) {
     	let p;
     	let t_value = /*question*/ ctx[16] + "";
@@ -6636,8 +6636,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "question-para svelte-1tt8qo5");
-    			add_location(p, file$1, 254, 16, 7922);
+    			attr_dev(p, "class", "question-para svelte-uskicl");
+    			add_location(p, file$1, 264, 16, 8213);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6655,14 +6655,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(254:12) {#if tokenized_question == null}",
+    		source: "(264:12) {#if tokenized_question == null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (262:20) {:else}
+    // (272:20) {:else}
     function create_else_block_3(ctx) {
     	let ruby;
     	let t0_value = /*surface_form*/ ctx[24] + "";
@@ -6674,8 +6674,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "svelte-1tt8qo5");
-    			add_location(ruby, file$1, 262, 24, 8322);
+    			attr_dev(ruby, "class", "svelte-uskicl");
+    			add_location(ruby, file$1, 272, 24, 8613);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6694,14 +6694,14 @@ var app = (function () {
     		block,
     		id: create_else_block_3.name,
     		type: "else",
-    		source: "(262:20) {:else}",
+    		source: "(272:20) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (258:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+    // (268:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
     function create_if_block_3(ctx) {
     	let ruby;
     	let t0_value = /*surface_form*/ ctx[24] + "";
@@ -6718,9 +6718,9 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(rt, file$1, 259, 42, 8216);
-    			attr_dev(ruby, "class", "svelte-1tt8qo5");
-    			add_location(ruby, file$1, 258, 24, 8166);
+    			add_location(rt, file$1, 269, 42, 8507);
+    			attr_dev(ruby, "class", "svelte-uskicl");
+    			add_location(ruby, file$1, 268, 24, 8457);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6742,14 +6742,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(258:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
+    		source: "(268:20) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (257:16) {#each tokenized_question as { surface_form, reading }}
+    // (267:16) {#each tokenized_question as { surface_form, reading }}
     function create_each_block_2(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -6796,14 +6796,14 @@ var app = (function () {
     		block,
     		id: create_each_block_2.name,
     		type: "each",
-    		source: "(257:16) {#each tokenized_question as { surface_form, reading }}",
+    		source: "(267:16) {#each tokenized_question as { surface_form, reading }}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (273:16) {:else}
+    // (283:16) {:else}
     function create_else_block$1(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*tokenized_solution*/ ctx[20];
@@ -6866,14 +6866,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(273:16) {:else}",
+    		source: "(283:16) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (271:16) {#if tokenized_solution == null}
+    // (281:16) {#if tokenized_solution == null}
     function create_if_block$1(ctx) {
     	let p;
     	let t_value = /*solution*/ ctx[19] + "";
@@ -6883,8 +6883,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "svelte-1tt8qo5");
-    			add_location(p, file$1, 271, 20, 8745);
+    			attr_dev(p, "class", "svelte-uskicl");
+    			add_location(p, file$1, 281, 20, 9036);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6902,14 +6902,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(271:16) {#if tokenized_solution == null}",
+    		source: "(281:16) {#if tokenized_solution == null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (279:24) {:else}
+    // (289:24) {:else}
     function create_else_block_1(ctx) {
     	let ruby;
     	let t0_value = /*surface_form*/ ctx[24] + "";
@@ -6921,8 +6921,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "solution-ruby svelte-1tt8qo5");
-    			add_location(ruby, file$1, 279, 28, 9197);
+    			attr_dev(ruby, "class", "solution-ruby svelte-uskicl");
+    			add_location(ruby, file$1, 289, 28, 9488);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6941,14 +6941,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(279:24) {:else}",
+    		source: "(289:24) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (275:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
+    // (285:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}
     function create_if_block_1$1(ctx) {
     	let ruby;
     	let t0_value = /*surface_form*/ ctx[24] + "";
@@ -6965,10 +6965,10 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr_dev(rt, "class", "solution-rt svelte-1tt8qo5");
-    			add_location(rt, file$1, 276, 46, 9059);
-    			attr_dev(ruby, "class", "solution-ruby svelte-1tt8qo5");
-    			add_location(ruby, file$1, 275, 28, 8983);
+    			attr_dev(rt, "class", "solution-rt svelte-uskicl");
+    			add_location(rt, file$1, 286, 46, 9350);
+    			attr_dev(ruby, "class", "solution-ruby svelte-uskicl");
+    			add_location(ruby, file$1, 285, 28, 9274);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6990,14 +6990,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(275:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
+    		source: "(285:24) {#if tokenShouldShowFurigana(surface_form) && showFurigana}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (274:20) {#each tokenized_solution as { surface_form, reading }}
+    // (284:20) {#each tokenized_solution as { surface_form, reading }}
     function create_each_block_1(ctx) {
     	let show_if;
     	let if_block_anchor;
@@ -7044,14 +7044,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(274:20) {#each tokenized_solution as { surface_form, reading }}",
+    		source: "(284:20) {#each tokenized_solution as { surface_form, reading }}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (252:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}
+    // (262:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}
     function create_each_block(ctx) {
     	let div1;
     	let t0;
@@ -7108,14 +7108,14 @@ var app = (function () {
     			t5 = text("/5");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "答え。。。");
-    			attr_dev(input, "class", "svelte-1tt8qo5");
-    			add_location(input, file$1, 268, 12, 8490);
-    			attr_dev(p, "class", "svelte-1tt8qo5");
-    			add_location(p, file$1, 285, 16, 9411);
-    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-1tt8qo5");
-    			add_location(div0, file$1, 269, 12, 8608);
-    			attr_dev(div1, "class", "question svelte-1tt8qo5");
-    			add_location(div1, file$1, 252, 8, 7836);
+    			attr_dev(input, "class", "svelte-uskicl");
+    			add_location(input, file$1, 278, 12, 8781);
+    			attr_dev(p, "class", "score-para svelte-uskicl");
+    			add_location(p, file$1, 295, 16, 9702);
+    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-uskicl");
+    			add_location(div0, file$1, 279, 12, 8899);
+    			attr_dev(div1, "class", "question svelte-uskicl");
+    			add_location(div1, file$1, 262, 8, 8127);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7174,7 +7174,7 @@ var app = (function () {
 
     			if (dirty & /*translations*/ 1 && t4_value !== (t4_value = /*score*/ ctx[21] + "")) set_data_dev(t4, t4_value);
 
-    			if (dirty & /*showSolution*/ 8 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-1tt8qo5")) {
+    			if (dirty & /*showSolution*/ 8 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-uskicl")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
     		},
@@ -7191,7 +7191,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(252:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}",
+    		source: "(262:4) {#each translations.sentence_pairs as { id, question, tokenized_question, answer, solution, tokenized_solution, score }}",
     		ctx
     	});
 
@@ -7325,26 +7325,26 @@ var app = (function () {
     			div2 = element("div");
     			t13 = space();
     			create_component(error.$$.fragment);
-    			attr_dev(h1, "class", "svelte-1tt8qo5");
-    			add_location(h1, file$1, 239, 4, 6990);
-    			attr_dev(input, "class", "subject svelte-1tt8qo5");
+    			attr_dev(h1, "class", "svelte-uskicl");
+    			add_location(h1, file$1, 249, 4, 7281);
+    			attr_dev(input, "class", "subject svelte-uskicl");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "サブジェクト");
-    			add_location(input, file$1, 241, 8, 7055);
-    			attr_dev(p, "class", "note svelte-1tt8qo5");
-    			add_location(p, file$1, 242, 8, 7190);
-    			attr_dev(div0, "class", "subject-container svelte-1tt8qo5");
-    			add_location(div0, file$1, 240, 4, 7014);
-    			attr_dev(h2, "class", "svelte-1tt8qo5");
-    			add_location(h2, file$1, 246, 8, 7387);
-    			attr_dev(div1, "class", "header-container svelte-1tt8qo5");
-    			add_location(div1, file$1, 245, 4, 7347);
-    			attr_dev(div2, "class", "loading-icon svelte-1tt8qo5");
-    			add_location(div2, file$1, 291, 8, 9632);
-    			attr_dev(div3, "class", div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1tt8qo5");
-    			add_location(div3, file$1, 289, 4, 9489);
-    			attr_dev(div4, "class", div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1tt8qo5");
-    			add_location(div4, file$1, 238, 0, 6929);
+    			add_location(input, file$1, 251, 8, 7346);
+    			attr_dev(p, "class", "note svelte-uskicl");
+    			add_location(p, file$1, 252, 8, 7481);
+    			attr_dev(div0, "class", "subject-container svelte-uskicl");
+    			add_location(div0, file$1, 250, 4, 7305);
+    			attr_dev(h2, "class", "svelte-uskicl");
+    			add_location(h2, file$1, 256, 8, 7678);
+    			attr_dev(div1, "class", "header-container svelte-uskicl");
+    			add_location(div1, file$1, 255, 4, 7638);
+    			attr_dev(div2, "class", "loading-icon svelte-uskicl");
+    			add_location(div2, file$1, 301, 8, 9942);
+    			attr_dev(div3, "class", div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl");
+    			add_location(div3, file$1, 299, 4, 9799);
+    			attr_dev(div4, "class", div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl");
+    			add_location(div4, file$1, 248, 0, 7220);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7441,11 +7441,11 @@ var app = (function () {
     			if (dirty & /*showError*/ 32) error_changes.showError = /*showError*/ ctx[5];
     			error.$set(error_changes);
 
-    			if (!current || dirty & /*isMarking*/ 4 && div3_class_value !== (div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1tt8qo5")) {
+    			if (!current || dirty & /*isMarking*/ 4 && div3_class_value !== (div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl")) {
     				attr_dev(div3, "class", div3_class_value);
     			}
 
-    			if (!current || dirty & /*isMarking*/ 4 && div4_class_value !== (div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1tt8qo5")) {
+    			if (!current || dirty & /*isMarking*/ 4 && div4_class_value !== (div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl")) {
     				attr_dev(div4, "class", div4_class_value);
     			}
     		},

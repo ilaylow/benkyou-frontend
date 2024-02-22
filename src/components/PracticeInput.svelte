@@ -174,7 +174,7 @@
     p {
       word-wrap: break-word; /* This ensures text goes to the next line */
       hyphens: auto; /* Optional: This will hyphenate words if necessary */
-      font-size: clamp(18px, 1.1vw, 30px);
+      font-size: clamp(15px, 1.1vw, 17px);
       font-family: Meiryo, Yu Gothic, sans-serif;
       font-weight: bold;
     }
@@ -222,12 +222,22 @@
         font-size: 100%;
     }
 
+    .score-para {
+        display: block;
+        width: fit-content;
+        padding: 7px;
+        border-radius: 0.5rem;
+        background-color: #5f5e5e;
+        font-size: clamp(15px, 0.5vw, 17px);
+    }
+
     .solution-ruby {
-        font-size: 120%;
+        word-wrap: break-word;
+        font-size: clamp(14px, 1.1vw, 15px);
     }
 
     .solution-rt {
-        font-size: 70%;
+        font-size: clamp(9px, 0.7vw, 10px);
     }
 
     @keyframes spin {
@@ -283,7 +293,7 @@
                         {/if}
                     {/each}
                 {/if}
-                <p>Score: {score}/5</p>
+                <p class="score-para">Score: {score}/5</p>
             </div>
         </div>
     {/each}
