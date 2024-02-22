@@ -2629,7 +2629,7 @@ var app = (function () {
     			t = text(/*text*/ ctx[0]);
     			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-ub4ofo");
     			button.disabled = /*loading*/ ctx[1];
-    			add_location(button, file$9, 147, 0, 3109);
+    			add_location(button, file$9, 147, 0, 2962);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3303,16 +3303,16 @@ var app = (function () {
     			create_component(button3.$$.fragment);
     			t4 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(div0, "class", "logout-container svelte-1mculqv");
-    			add_location(div0, file$5, 81, 8, 1962);
-    			attr_dev(div1, "class", "translation-practice-button-container svelte-1mculqv");
-    			add_location(div1, file$5, 86, 12, 2160);
-    			attr_dev(div2, "class", "kanji-practice-button-container svelte-1mculqv");
-    			add_location(div2, file$5, 89, 12, 2324);
-    			attr_dev(div3, "class", "sentence-analysis-button-container svelte-1mculqv");
-    			add_location(div3, file$5, 92, 12, 2486);
-    			attr_dev(div4, "class", "title-container svelte-1mculqv");
-    			add_location(div4, file$5, 84, 8, 2094);
+    			attr_dev(div0, "class", "logout-container svelte-cyonif");
+    			add_location(div0, file$5, 81, 8, 1881);
+    			attr_dev(div1, "class", "translation-practice-button-container svelte-cyonif");
+    			add_location(div1, file$5, 86, 12, 2074);
+    			attr_dev(div2, "class", "kanji-practice-button-container svelte-cyonif");
+    			add_location(div2, file$5, 89, 12, 2235);
+    			attr_dev(div3, "class", "sentence-analysis-button-container svelte-cyonif");
+    			add_location(div3, file$5, 92, 12, 2394);
+    			attr_dev(div4, "class", "title-container svelte-cyonif");
+    			add_location(div4, file$5, 84, 8, 2010);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -3479,7 +3479,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			if_block.c();
-    			add_location(main, file$5, 75, 0, 1847);
+    			add_location(main, file$5, 75, 0, 1772);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

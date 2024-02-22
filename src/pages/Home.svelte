@@ -48,7 +48,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        margin-bottom: 17vh;
+        margin-bottom: 25vh;
     }
 
     .translation-practice-button-container {
@@ -60,15 +60,15 @@
 
     .kanji-practice-button-container {
         position: fixed;
-        margin-top: 35vh;
+        margin-top: 39vh;
         margin-right: 0vw;
         transform: rotate(-15deg);
     }
 
     .sentence-analysis-button-container {
         position: fixed;
-        margin-top: 20vh;
-        margin-right: 60vw;
+        margin-top: 25vh;
+        margin-right: 64vw;
         transform: rotate(10deg);
     }
 </style>
