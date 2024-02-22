@@ -31,6 +31,30 @@
 		white-space: nowrap;
 	}
 
+	.router {
+		background-color: #2e2e2e;
+		color: #5b5b5b;
+		border: none;
+		padding: 1.2vh 1.3vw;
+		font-size: clamp(30px, 4.7vw, 70px);
+		font-family: MS PMincho, Meiryo, Yu Gothic, sans-serif;
+		font-weight: bold;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		white-space: nowrap;
+		letter-spacing: 5px;
+		transition: color 0s;
+	}
+
+	.kanji{
+		font-size: clamp(30px, 7vw, 100px);
+	}
+
+	.sentence-analysis{
+		font-size: clamp(30px, 3.5vw, 50px);
+		letter-spacing: 0px;
+	}
+
 	.error {
         margin-left: 23%;
         background-color: #be780f;
@@ -96,6 +120,11 @@
 
 	.button:hover {
 		background-color: rgb(116, 19, 51);
+	}
+
+	.button.router:hover {
+		background-color: #2e2e2e;
+		color: #ff4081;
 	}
 
 	.button.error:hover {
