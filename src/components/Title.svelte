@@ -16,7 +16,7 @@
         white-space: nowrap;  /* Keep text on a single line */
         border-right: 0.5rem solid #ffffff;
 		font-size: 1rem; /* Adjust the font-size to control the caret size */
-        animation: typing 3s steps(40, end) forwards,  /* Added forwards to keep text visible */
+        animation: typing 1.2s steps(40, end) forwards,  /* Added forwards to keep text visible */
                   blink-caret .75s step-end infinite;
         margin-bottom: 0.5vh;
     }

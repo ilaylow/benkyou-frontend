@@ -2550,12 +2550,12 @@ var app = (function () {
     			div = element("div");
     			h3 = element("h3");
     			h3.textContent = "An AI Powered Japanese Learning Experience";
-    			attr_dev(h1, "class", "svelte-fd0wwr");
-    			add_location(h1, file$a, 42, 0, 1248);
-    			attr_dev(h3, "class", "svelte-fd0wwr");
-    			add_location(h3, file$a, 44, 4, 1294);
-    			attr_dev(div, "class", "typewriter svelte-fd0wwr");
-    			add_location(div, file$a, 43, 0, 1264);
+    			attr_dev(h1, "class", "svelte-146w6u1");
+    			add_location(h1, file$a, 42, 0, 1250);
+    			attr_dev(h3, "class", "svelte-146w6u1");
+    			add_location(h3, file$a, 44, 4, 1296);
+    			attr_dev(div, "class", "typewriter svelte-146w6u1");
+    			add_location(div, file$a, 43, 0, 1266);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
