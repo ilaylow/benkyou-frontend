@@ -47,7 +47,7 @@
 	}
 
 	.kanji{
-		font-size: clamp(30px, 7vw, 100px);
+		font-size: clamp(30px, 10vw, 130px);
 	}
 
 	.sentence-analysis{

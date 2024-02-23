@@ -2627,9 +2627,9 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(/*text*/ ctx[0]);
-    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-ub4ofo");
+    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-1gf7dsv");
     			button.disabled = /*loading*/ ctx[1];
-    			add_location(button, file$9, 147, 0, 2962);
+    			add_location(button, file$9, 147, 0, 2963);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2646,7 +2646,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*text*/ 1) set_data_dev(t, /*text*/ ctx[0]);
 
-    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-ub4ofo")) {
+    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-1gf7dsv")) {
     				attr_dev(button, "class", button_class_value);
     			}
 
@@ -3303,15 +3303,15 @@ var app = (function () {
     			create_component(button3.$$.fragment);
     			t4 = space();
     			create_component(footer.$$.fragment);
-    			attr_dev(div0, "class", "logout-container svelte-cyonif");
+    			attr_dev(div0, "class", "logout-container svelte-1ps70ew");
     			add_location(div0, file$5, 81, 8, 1881);
-    			attr_dev(div1, "class", "translation-practice-button-container svelte-cyonif");
+    			attr_dev(div1, "class", "translation-practice-button-container svelte-1ps70ew");
     			add_location(div1, file$5, 86, 12, 2074);
-    			attr_dev(div2, "class", "kanji-practice-button-container svelte-cyonif");
+    			attr_dev(div2, "class", "kanji-practice-button-container svelte-1ps70ew");
     			add_location(div2, file$5, 89, 12, 2235);
-    			attr_dev(div3, "class", "sentence-analysis-button-container svelte-cyonif");
+    			attr_dev(div3, "class", "sentence-analysis-button-container svelte-1ps70ew");
     			add_location(div3, file$5, 92, 12, 2394);
-    			attr_dev(div4, "class", "title-container svelte-cyonif");
+    			attr_dev(div4, "class", "title-container svelte-1ps70ew");
     			add_location(div4, file$5, 84, 8, 2010);
     		},
     		m: function mount(target, anchor) {

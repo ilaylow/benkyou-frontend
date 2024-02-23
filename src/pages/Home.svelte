@@ -60,7 +60,7 @@
 
     .kanji-practice-button-container {
         position: fixed;
-        margin-top: 39vh;
+        margin-top: 36vh;
         margin-right: 0vw;
         transform: rotate(-15deg);
     }
