@@ -196,8 +196,8 @@
         border: 0.5rem solid #181818; /* Background color */
         border-top: 0.5rem solid #ff4081; /* Foreground color */
         border-radius: 50%;
-        width: 1rem;
-        height: 1rem;
+        width: 1vw;
+        height: 1vw;
         transform: translate(-50%, -50%); /* Adjust the position */
         animation: spin 2s linear infinite;
     }

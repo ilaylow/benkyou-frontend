@@ -61,7 +61,7 @@
 		color: #fff;
 		border: none;
 		padding: 1.2vh 1.3vw;
-		font-size: clamp(14px, 1vw, 16px);
+		font-size: clamp(14px, 1.4vw, 18px);
 		font-family: Meiryo, Yu Gothic, sans-serif;
         text-decoration: bold;
 		border-radius: 0.25rem;

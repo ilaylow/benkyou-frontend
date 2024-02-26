@@ -112,6 +112,11 @@
         window.location.reload()
     }
 
+    function reloadPageFromError() {
+        sessionStorage.removeItem("translations")
+        reloadPage()
+    }
+
     function handleHome() {
         navigate('/')
     }
@@ -158,7 +163,7 @@
         <div>
             <h1 class="error-header">An error has occurred.</h1>
             <div class="button-container">
-                <Button on:click={reloadPage} text="再試行"/>
+                <Button on:click={reloadPageFromError} text="再試行"/>
                 <Button style="error" on:click={handleHome} text="ホーム"/>
             </div>
         </div>

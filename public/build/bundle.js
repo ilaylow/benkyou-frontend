@@ -2627,9 +2627,9 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			t = text(/*text*/ ctx[0]);
-    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-1gf7dsv");
+    			attr_dev(button, "class", button_class_value = "button " + /*style*/ ctx[2] + " svelte-1oi13z7");
     			button.disabled = /*loading*/ ctx[1];
-    			add_location(button, file$9, 147, 0, 2963);
+    			add_location(button, file$9, 147, 0, 2965);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2646,7 +2646,7 @@ var app = (function () {
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*text*/ 1) set_data_dev(t, /*text*/ ctx[0]);
 
-    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-1gf7dsv")) {
+    			if (dirty & /*style*/ 4 && button_class_value !== (button_class_value = "button " + /*style*/ ctx[2] + " svelte-1oi13z7")) {
     				attr_dev(button, "class", button_class_value);
     			}
 
@@ -3018,24 +3018,24 @@ var app = (function () {
     			div0 = element("div");
     			t7 = space();
     			create_component(error.$$.fragment);
-    			attr_dev(h30, "class", "login-form-title svelte-11osbxr");
-    			add_location(h30, file$6, 95, 4, 2388);
-    			attr_dev(input0, "class", "login-form-input svelte-11osbxr");
+    			attr_dev(h30, "class", "login-form-title svelte-1be5vxj");
+    			add_location(h30, file$6, 95, 4, 2386);
+    			attr_dev(input0, "class", "login-form-input svelte-1be5vxj");
     			attr_dev(input0, "type", "email");
     			attr_dev(input0, "placeholder", "メール");
-    			add_location(input0, file$6, 96, 4, 2433);
-    			attr_dev(h31, "class", "login-form-title svelte-11osbxr");
-    			add_location(h31, file$6, 98, 4, 2534);
-    			attr_dev(input1, "class", "login-form-input svelte-11osbxr");
+    			add_location(input0, file$6, 96, 4, 2431);
+    			attr_dev(h31, "class", "login-form-title svelte-1be5vxj");
+    			add_location(h31, file$6, 98, 4, 2532);
+    			attr_dev(input1, "class", "login-form-input svelte-1be5vxj");
     			attr_dev(input1, "type", "password");
     			attr_dev(input1, "placeholder", "パスワード");
-    			add_location(input1, file$6, 99, 4, 2582);
-    			attr_dev(div0, "class", "loading-icon svelte-11osbxr");
-    			add_location(div0, file$6, 103, 6, 2834);
-    			attr_dev(div1, "class", div1_class_value = "button-container " + (/*clicked*/ ctx[0] ? 'is-logging-in' : '') + " svelte-11osbxr");
-    			add_location(div1, file$6, 101, 4, 2691);
-    			attr_dev(div2, "class", "login-form svelte-11osbxr");
-    			add_location(div2, file$6, 94, 0, 2358);
+    			add_location(input1, file$6, 99, 4, 2580);
+    			attr_dev(div0, "class", "loading-icon svelte-1be5vxj");
+    			add_location(div0, file$6, 103, 6, 2832);
+    			attr_dev(div1, "class", div1_class_value = "button-container " + (/*clicked*/ ctx[0] ? 'is-logging-in' : '') + " svelte-1be5vxj");
+    			add_location(div1, file$6, 101, 4, 2689);
+    			attr_dev(div2, "class", "login-form svelte-1be5vxj");
+    			add_location(div2, file$6, 94, 0, 2356);
     		},
     		l: function claim(nodes) {
     			throw new Error_1$1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3085,7 +3085,7 @@ var app = (function () {
     			if (dirty & /*showSignInError*/ 2) error_changes.showError = /*showSignInError*/ ctx[1];
     			error.$set(error_changes);
 
-    			if (!current || dirty & /*clicked*/ 1 && div1_class_value !== (div1_class_value = "button-container " + (/*clicked*/ ctx[0] ? 'is-logging-in' : '') + " svelte-11osbxr")) {
+    			if (!current || dirty & /*clicked*/ 1 && div1_class_value !== (div1_class_value = "button-container " + (/*clicked*/ ctx[0] ? 'is-logging-in' : '') + " svelte-1be5vxj")) {
     				attr_dev(div1, "class", div1_class_value);
     			}
     		},
@@ -5741,12 +5741,12 @@ var app = (function () {
     			t0 = space();
     			h2 = element("h2");
     			h2.textContent = "This may take up to 30 seconds...";
-    			attr_dev(div0, "class", "loading-spinner svelte-8a20zf");
-    			add_location(div0, file$4, 30, 4, 694);
-    			attr_dev(h2, "class", "svelte-8a20zf");
-    			add_location(h2, file$4, 32, 4, 741);
-    			attr_dev(div1, "class", "svelte-8a20zf");
-    			add_location(div1, file$4, 29, 0, 683);
+    			attr_dev(div0, "class", "loading-spinner svelte-1rwipms");
+    			add_location(div0, file$4, 32, 4, 769);
+    			attr_dev(h2, "class", "svelte-1rwipms");
+    			add_location(h2, file$4, 33, 4, 810);
+    			attr_dev(div1, "class", "container svelte-1rwipms");
+    			add_location(div1, file$4, 31, 0, 740);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6636,8 +6636,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "question-para svelte-uskicl");
-    			add_location(p, file$1, 264, 16, 8213);
+    			attr_dev(p, "class", "question-para svelte-1pjujrx");
+    			add_location(p, file$1, 264, 16, 8211);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6674,8 +6674,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "svelte-uskicl");
-    			add_location(ruby, file$1, 272, 24, 8613);
+    			attr_dev(ruby, "class", "svelte-1pjujrx");
+    			add_location(ruby, file$1, 272, 24, 8611);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6718,9 +6718,9 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			add_location(rt, file$1, 269, 42, 8507);
-    			attr_dev(ruby, "class", "svelte-uskicl");
-    			add_location(ruby, file$1, 268, 24, 8457);
+    			add_location(rt, file$1, 269, 42, 8505);
+    			attr_dev(ruby, "class", "svelte-1pjujrx");
+    			add_location(ruby, file$1, 268, 24, 8455);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6883,8 +6883,8 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			attr_dev(p, "class", "svelte-uskicl");
-    			add_location(p, file$1, 281, 20, 9036);
+    			attr_dev(p, "class", "svelte-1pjujrx");
+    			add_location(p, file$1, 281, 20, 9034);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -6921,8 +6921,8 @@ var app = (function () {
     			ruby = element("ruby");
     			t0 = text(t0_value);
     			t1 = space();
-    			attr_dev(ruby, "class", "solution-ruby svelte-uskicl");
-    			add_location(ruby, file$1, 289, 28, 9488);
+    			attr_dev(ruby, "class", "solution-ruby svelte-1pjujrx");
+    			add_location(ruby, file$1, 289, 28, 9486);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -6965,10 +6965,10 @@ var app = (function () {
     			rt = element("rt");
     			t1 = text(t1_value);
     			t2 = space();
-    			attr_dev(rt, "class", "solution-rt svelte-uskicl");
-    			add_location(rt, file$1, 286, 46, 9350);
-    			attr_dev(ruby, "class", "solution-ruby svelte-uskicl");
-    			add_location(ruby, file$1, 285, 28, 9274);
+    			attr_dev(rt, "class", "solution-rt svelte-1pjujrx");
+    			add_location(rt, file$1, 286, 46, 9348);
+    			attr_dev(ruby, "class", "solution-ruby svelte-1pjujrx");
+    			add_location(ruby, file$1, 285, 28, 9272);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ruby, anchor);
@@ -7108,14 +7108,14 @@ var app = (function () {
     			t5 = text("/5");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "答え。。。");
-    			attr_dev(input, "class", "svelte-uskicl");
-    			add_location(input, file$1, 278, 12, 8781);
-    			attr_dev(p, "class", "score-para svelte-uskicl");
-    			add_location(p, file$1, 295, 16, 9702);
-    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-uskicl");
-    			add_location(div0, file$1, 279, 12, 8899);
-    			attr_dev(div1, "class", "question svelte-uskicl");
-    			add_location(div1, file$1, 262, 8, 8127);
+    			attr_dev(input, "class", "svelte-1pjujrx");
+    			add_location(input, file$1, 278, 12, 8779);
+    			attr_dev(p, "class", "score-para svelte-1pjujrx");
+    			add_location(p, file$1, 295, 16, 9700);
+    			attr_dev(div0, "class", div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-1pjujrx");
+    			add_location(div0, file$1, 279, 12, 8897);
+    			attr_dev(div1, "class", "question svelte-1pjujrx");
+    			add_location(div1, file$1, 262, 8, 8125);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7174,7 +7174,7 @@ var app = (function () {
 
     			if (dirty & /*translations*/ 1 && t4_value !== (t4_value = /*score*/ ctx[21] + "")) set_data_dev(t4, t4_value);
 
-    			if (dirty & /*showSolution*/ 8 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-uskicl")) {
+    			if (dirty & /*showSolution*/ 8 && div0_class_value !== (div0_class_value = "solution-container " + (/*showSolution*/ ctx[3] ? 'is-shown' : '') + " svelte-1pjujrx")) {
     				attr_dev(div0, "class", div0_class_value);
     			}
     		},
@@ -7325,26 +7325,26 @@ var app = (function () {
     			div2 = element("div");
     			t13 = space();
     			create_component(error.$$.fragment);
-    			attr_dev(h1, "class", "svelte-uskicl");
-    			add_location(h1, file$1, 249, 4, 7281);
-    			attr_dev(input, "class", "subject svelte-uskicl");
+    			attr_dev(h1, "class", "svelte-1pjujrx");
+    			add_location(h1, file$1, 249, 4, 7279);
+    			attr_dev(input, "class", "subject svelte-1pjujrx");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "placeholder", "サブジェクト");
-    			add_location(input, file$1, 251, 8, 7346);
-    			attr_dev(p, "class", "note svelte-uskicl");
-    			add_location(p, file$1, 252, 8, 7481);
-    			attr_dev(div0, "class", "subject-container svelte-uskicl");
-    			add_location(div0, file$1, 250, 4, 7305);
-    			attr_dev(h2, "class", "svelte-uskicl");
-    			add_location(h2, file$1, 256, 8, 7678);
-    			attr_dev(div1, "class", "header-container svelte-uskicl");
-    			add_location(div1, file$1, 255, 4, 7638);
-    			attr_dev(div2, "class", "loading-icon svelte-uskicl");
-    			add_location(div2, file$1, 301, 8, 9942);
-    			attr_dev(div3, "class", div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl");
-    			add_location(div3, file$1, 299, 4, 9799);
-    			attr_dev(div4, "class", div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl");
-    			add_location(div4, file$1, 248, 0, 7220);
+    			add_location(input, file$1, 251, 8, 7344);
+    			attr_dev(p, "class", "note svelte-1pjujrx");
+    			add_location(p, file$1, 252, 8, 7479);
+    			attr_dev(div0, "class", "subject-container svelte-1pjujrx");
+    			add_location(div0, file$1, 250, 4, 7303);
+    			attr_dev(h2, "class", "svelte-1pjujrx");
+    			add_location(h2, file$1, 256, 8, 7676);
+    			attr_dev(div1, "class", "header-container svelte-1pjujrx");
+    			add_location(div1, file$1, 255, 4, 7636);
+    			attr_dev(div2, "class", "loading-icon svelte-1pjujrx");
+    			add_location(div2, file$1, 301, 8, 9940);
+    			attr_dev(div3, "class", div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1pjujrx");
+    			add_location(div3, file$1, 299, 4, 9797);
+    			attr_dev(div4, "class", div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1pjujrx");
+    			add_location(div4, file$1, 248, 0, 7218);
     		},
     		l: function claim(nodes) {
     			throw new Error_1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -7441,11 +7441,11 @@ var app = (function () {
     			if (dirty & /*showError*/ 32) error_changes.showError = /*showError*/ ctx[5];
     			error.$set(error_changes);
 
-    			if (!current || dirty & /*isMarking*/ 4 && div3_class_value !== (div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl")) {
+    			if (!current || dirty & /*isMarking*/ 4 && div3_class_value !== (div3_class_value = "button-container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1pjujrx")) {
     				attr_dev(div3, "class", div3_class_value);
     			}
 
-    			if (!current || dirty & /*isMarking*/ 4 && div4_class_value !== (div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-uskicl")) {
+    			if (!current || dirty & /*isMarking*/ 4 && div4_class_value !== (div4_class_value = "container " + (/*isMarking*/ ctx[2] ? 'is-marking' : '') + " svelte-1pjujrx")) {
     				attr_dev(div4, "class", div4_class_value);
     			}
     		},
@@ -7711,7 +7711,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\pages\\PracticeTranslation.svelte";
 
-    // (168:4) {:else}
+    // (173:4) {:else}
     function create_else_block(ctx) {
     	let div;
     	let button0;
@@ -7752,7 +7752,7 @@ var app = (function () {
     			t1 = space();
     			create_component(practiceinput.$$.fragment);
     			attr_dev(div, "class", "button-container-logout svelte-1vquo8t");
-    			add_location(div, file, 169, 8, 6088);
+    			add_location(div, file, 174, 8, 6217);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -7795,14 +7795,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(168:4) {:else}",
+    		source: "(173:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (165:28) 
+    // (170:28) 
     function create_if_block_1(ctx) {
     	let loading;
     	let current;
@@ -7835,14 +7835,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(165:28) ",
+    		source: "(170:28) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (156:4) {#if error}
+    // (161:4) {#if error}
     function create_if_block(ctx) {
     	let div1;
     	let h1;
@@ -7853,7 +7853,7 @@ var app = (function () {
     	let button1;
     	let current;
     	button0 = new Button({ props: { text: "再試行" }, $$inline: true });
-    	button0.$on("click", reloadPage);
+    	button0.$on("click", reloadPageFromError);
 
     	button1 = new Button({
     			props: { style: "error", text: "ホーム" },
@@ -7873,10 +7873,10 @@ var app = (function () {
     			t2 = space();
     			create_component(button1.$$.fragment);
     			attr_dev(h1, "class", "error-header svelte-1vquo8t");
-    			add_location(h1, file, 158, 12, 5685);
+    			add_location(h1, file, 163, 12, 5805);
     			attr_dev(div0, "class", "button-container svelte-1vquo8t");
-    			add_location(div0, file, 159, 12, 5751);
-    			add_location(div1, file, 157, 8, 5666);
+    			add_location(div0, file, 164, 12, 5871);
+    			add_location(div1, file, 162, 8, 5786);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -7911,7 +7911,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(156:4) {#if error}",
+    		source: "(161:4) {#if error}",
     		ctx
     	});
 
@@ -7939,7 +7939,7 @@ var app = (function () {
     		c: function create() {
     			main = element("main");
     			if_block.c();
-    			add_location(main, file, 154, 0, 5604);
+    			add_location(main, file, 159, 0, 5724);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -8004,6 +8004,11 @@ var app = (function () {
 
     function reloadPage() {
     	window.location.reload();
+    }
+
+    function reloadPageFromError() {
+    	sessionStorage.removeItem("translations");
+    	reloadPage();
     }
 
     function instance$1($$self, $$props, $$invalidate) {
@@ -8141,6 +8146,7 @@ var app = (function () {
     		error,
     		tokenizer,
     		reloadPage,
+    		reloadPageFromError,
     		handleHome,
     		handleLogOut
     	});
