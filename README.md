@@ -1,6 +1,6 @@
 # Benkyou-Frontend
 
-This project hosts the front-end code the Benkyou Web App.
+This project hosts the front-end code the Benkyou Web App. (The backend project is still privated)
 
 ## Current State
 
